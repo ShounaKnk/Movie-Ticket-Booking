@@ -1,6 +1,6 @@
-# Movie-Ticket-Booking<br>
+# Movie-Ticket-Booking<br><br>
 ///IGNORE HTML FOLDER<br>
-*****make a database on phpMyAdmin***<br>
+*****make a database on phpMyAdmin***<br><br>
 **create the followig table for user deatails**<br>
 Create a table user_details<br>
 (<br>
