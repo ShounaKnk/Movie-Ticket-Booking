@@ -9,7 +9,8 @@
         $password = $_POST['pword'];
         $phno = $_POST['phno'];
 
-        $q = "insert into user_details values('$username', '$gender' , '$dob', '$email', '$password', '$phno')";
+        $q = "insert into user_details values
+            ('$username', '$gender' , '$dob', '$email', '$password', '$phno')";
         $r = mysqli_query($con, $q);
         if($r)
         {
