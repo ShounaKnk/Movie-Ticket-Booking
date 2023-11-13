@@ -15,6 +15,7 @@
         if($r)
         {
             echo "data entered successfully";
+            header("Location: login.html");
         }
         else{
             echo "error in entering the data";

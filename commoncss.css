@@ -1,0 +1,37 @@
+html, body{
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+.page_head{
+    color: red;
+}
+
+.topnav
+{
+    background-color: rgb(54, 54, 54);
+    overflow: auto; 
+}
+
+.topnav a{
+    float: left;
+    text-align: center;
+    padding: 20px;
+    color:white;
+    text-decoration: none;
+}
+
+.topnav a:hover{
+    background-color: red;
+    color: black;
+}
+
+i:hover{
+    color:black;
+}
+
+.block_head{
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
