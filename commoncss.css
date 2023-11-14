@@ -5,6 +5,9 @@ html, body{
 }
 .page_head{
     color: red;
+    position: relative;
+    left: 40px;
+    display: inline-block;
 }
 
 .topnav
@@ -30,7 +33,7 @@ i:hover{
     color:black;
 }
 
-.block_head{
+.page_head{
     position: relative;
     left: 20px;
     top: 20px;

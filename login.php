@@ -14,7 +14,7 @@
         {
             // header("Location: DMQP_Project/HomePage.html");
             echo "login Successful";
-            $aq = "Update user_details set status = 'active' where username='global $username'";
+            $aq = "Update user_details set status = 'active' where username='$username'";
             $r = mysqli_query($con, $aq);
             header("Location: HomePage.html");
         }
