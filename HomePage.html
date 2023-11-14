@@ -9,8 +9,22 @@
         .available_movies, .upcoming_movies{
             background-color: #363636;
             border-radius: 25px;
+            width: 1450px;
+            margin-left: 35px;
+            margin-top: 25px;
         }
 
+        span{
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: red;
+            padding: 5px;
+            border-radius: 25px;
+        }
+        .block_head{
+            margin-bottom: 20px;
+        }
         .card{
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
             width: 200px;
@@ -48,7 +62,7 @@
         </div>
         <div class="available_movies">
             <div class="block_head">
-                <h3>Available Movies</h3>
+                <span>Available Movies</span>
             </div>
             <form action="bookticket.php" method="post">
                 <a href="nextpage.html"><div class="card">
@@ -86,7 +100,7 @@
 
         <div class="upcoming_movies" style="margin-bottom: 50px;">
             <div class="block_head">
-                <h3>Upcoming Movies</h3>
+                <span>Upcoming Movies</span>
             </div>
             <a href="nextpage.html"><div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
@@ -112,7 +126,8 @@
                     <h4 style="text-align: center;">transfomers</h4>
                 </div>
             </div></a>
-            <a href="nextpage.html"><div class="card">
+            <a href="nextpage.html">
+                <div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                 <div class="movie_info">
                     <h4 style="text-align: center;">transfomers</h4>
