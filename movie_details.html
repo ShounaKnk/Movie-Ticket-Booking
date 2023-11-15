@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="commoncss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container{
+            position: relative;
+            top: 20px;
+            left: 170px;
+            background-color: #363636;
+            border-radius: 25px;
+            height: 520px;
+            width: 1200px;
+            /* margin-top: 20px;
+            margin-left: 170px */
+        }
+
+        .poster_container{
+            position: absolute;
+            bottom: 15px;
+            left: 18px;
+            background-color: red;
+            border-radius: 25px;
+            margin-top: 30px;
+            display: inline-flex;
+            width: 340px;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+            height: 490px;
+        }
+        .movie_poster{
+            display: inline-block;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+        img{
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            border-radius: 25px;
+            display: inline;
+        }
+
+        .info_container{
+            background-color: #363636;
+            border: solid red 5px;
+            border-radius: 25px;
+            height: 480px;
+            width: 800px;
+            display: inline-block;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+            position: absolute;
+            right: 18px;
+            bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page_head">
+        <h1>About Movie</h1>
+    </div>
+    <div class="topnav">
+        <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
+        <a href="my_tickets.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+        <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
+    </div>
+    <div class="container">
+        <div class="poster_container">
+            <div class="movie_poster">
+                <img src="movie_poster.jpg" alt="movie_poster" style="width: 300px;">
+            </div>
+        </div>
+        <div class="info_container">
+            <div class="movie_info">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
