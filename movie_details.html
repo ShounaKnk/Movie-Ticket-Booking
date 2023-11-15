@@ -62,10 +62,11 @@
             width: 740px;
             left: 15px;
             top: 30px;
-            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
             border: solid rgba(0,0,0,0.2) 1px;
             border-radius: 25px;
-            padding: 10px;
+            text-align: justify;
+            padding: 15px;
             display: inline-block;
         }
         .movie_info_2{
@@ -75,25 +76,42 @@
             height: 280px;
             width: 360px;
             border: solid rgba(0,0,0,0.2) 1px;
-            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
             border-radius: 25px;
         }
 
         .movie_info_3{
             position: absolute;
-            bottom: 13px;
+            bottom: 83px;
             right: 15px;
-            height: 280px;
-            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+            height: 210px;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
             border: solid rgba(0,0,0,0.2) 1px;
             width: 375px;
             border-radius: 25px;
         }
-
         .info_text{
             position: inherit;
             left: 32px;
             top: 32px;
+        }
+
+        #bbutton{
+            position: absolute;
+            background-color: red;
+            height: 50px;
+            width: 375px;
+            bottom: 13px;
+            right: 15px;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+        }
+        span{
+            position: absolute;
+            top: 15px;
+            left: 145px;
         }
     </style>
 </head>
@@ -133,9 +151,12 @@
                 <div class="info_text">
                     <label>director: </label>john doe<br><br><br>
                     <label>writer: </label>john doe<br><br><br>
-                    <label>staff: </label>john doe<br><br><br>
-                    <label>staff: </label>john doe<br>
+                    <label>staff: </label>john doe
                 </div>
+            </div>
+            <div class="book_button">
+                <!-- <button type="button"></button> -->
+                <a href="theaterselect.html" id="bbutton"><span>Book Ticket</span></a>
             </div>
         </div>
     </div>
