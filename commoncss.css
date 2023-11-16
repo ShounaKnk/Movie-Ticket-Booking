@@ -5,8 +5,6 @@ html, body{
 }
 .page_head{
     color: red;
-    position: relative;
-    left: 40px;
     display: inline-block;
 }
 
@@ -32,8 +30,3 @@ html, body{
 i:hover{
     color:black;
 }
-
-/* .page_head{
-    margin-top: 20px;
-    margin-left: 20px;
-} */

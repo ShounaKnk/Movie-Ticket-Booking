@@ -46,7 +46,7 @@
 
         .info_container{
             background-color: #363636;
-            border: solid red 5px;
+            border: solid red 3px;
             border-radius: 25px;
             height: 480px;
             width: 800px;
@@ -114,10 +114,17 @@
             left: 145px;
         }
     </style>
+    <script>
+        function M_name_display()
+        {
+            var movieName = localStorage.getItem('Movie_name');
+            document.getElementById('movname').innerHTML = movieName;
+        }
+    </script>
 </head>
-<body>
+<body onload="M_name_display()">
     <div class="page_head">
-        <h1>About Movie</h1>
+        <h1 id="movname"></h1>  
     </div>
     <div class="topnav">
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
