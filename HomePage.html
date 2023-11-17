@@ -48,9 +48,9 @@
     </style>
 
     <script>
-        function sendData(Mname)
+        function sendData(M_id)
         {
-            localStorage.setItem("Movie_name", Mname);
+            localStorage.setItem("Movie_id", M_id);
             return;
         }
     </script>
@@ -74,7 +74,7 @@
                 <span>Available Movies</span>
             </div>
             <form action="bookticket.php" method="post">
-                <a href="movie_details.html" onclick="sendData('movie1')"><div class="card">
+                <a href="movie_details.php" onclick="sendData(101)"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>

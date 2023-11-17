@@ -117,14 +117,15 @@
     <script>
         function M_name_display()
         {
-            var movieName = localStorage.getItem('Movie_name');
-            document.getElementById('movname').innerHTML = movieName;
+            var movi_id = localStorage.getItem('Movie_id');
+            document.getElementById('movid').innerHTML = movi_id;
         }
+        
     </script>
 </head>
 <body onload="M_name_display()">
     <div class="page_head">
-        <h1 id="movname"></h1>  
+        <h1 id="movid"></h1>  
     </div>
     <div class="topnav">
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
@@ -140,11 +141,42 @@
         </div>
         <div class="info_container">
             <div class="movie_info_1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, fugiat possimus nobisdolore
-                at soluta voluptatem repudiandae exercitationem nihil accusantium ea magni minus, molestiae iure.
-                Similique cumque cupiditate nam odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, iure molestias.
-                Cupiditate quaerat nam rem saepe amet mollitia velit, consequuntur tempore fugit corrupti delectus illo similiqu
-                 exercitationem obcaecati earum totam?
+            <?php
+                $conn=mysqli_connect("localhost","root","","movie");
+
+                if($conn)
+                {
+                    echo "Details:";
+                }
+                else
+                {
+                    echo "error: Logins database not connected";
+                    exit();
+                }
+                
+                $q1="SELECT * FROM MOVIES WHERE M_id='101'";
+                $r1=mysqli_query($conn,$q1);
+                $n=mysqli_num_rows($r1);
+                $i=0;
+
+                if($r1)
+                {
+                    while($info=mysqli_fetch_array($r1))
+                    {
+                        echo "<br>Movie ID: ".$info['M_id'];
+                        echo "<br>Movie Name: ".$info['M_title'];
+                        echo "<br>Genre: ".$info['M_genre'];
+                        echo "<br>Production: ".$info['M_prod'];
+                        echo "<br>Director: ".$info['M_desp'];
+                        echo "<br>Cast: ".$info['M_cast'];
+                        $i++;
+                    }
+                }
+                else
+                    echo "error: Login record not inserted";
+                
+                mysqli_close($conn);
+            ?>
             </div>
             <div class="movie_info_2">
                 <div class="info_text">
