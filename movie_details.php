@@ -14,8 +14,8 @@
             height: 520px;
             width: 1200px;
             margin-top: 20px;
-            margin-left: 170px;
             margin-bottom: 20px;
+            margin-left: 170px;
         }
 
         .movie_poster{
