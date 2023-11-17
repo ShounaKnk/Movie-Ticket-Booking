@@ -7,41 +7,29 @@
     <link rel="stylesheet" href="commoncss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        
         .container{
-            position: relative;
-            top: 20px;
-            left: 170px;
             background-color: #363636;
             border-radius: 25px;
             height: 520px;
             width: 1200px;
-            /* margin-top: 20px;
-            margin-left: 170px */
+            margin-top: 20px;
+            margin-left: 170px;
+            margin-bottom: 20px;
         }
 
-        .poster_container{
-            position: absolute;
-            bottom: 15px;
-            left: 18px;
-            background-color: red;
-            border-radius: 25px;
-            margin-top: 30px;
-            display: inline-flex;
-            width: 340px;
-            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
-            height: 490px;
-        }
         .movie_poster{
-            display: inline-block;
-            margin-top: 15px;
-            margin-left: 20px;
+            position: absolute;
+            border-radius: 25px;
+            margin-top: 35px;
+            margin-left: 32px;
         }
         img{
             position: absolute;
-            top: 25px;
-            left: 20px;
             border-radius: 25px;
+            border: solid red 6px;
             display: inline;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
         }
 
         .info_container{
@@ -53,8 +41,8 @@
             display: inline-block;
             box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
             position: absolute;
-            right: 18px;
-            bottom: 15px;
+            margin-top: 15px;
+            margin-left: 370px;
         }
 
         .movie_info_1{
@@ -124,6 +112,11 @@
     </script>
 </head>
 <body onload="M_name_display()">
+    <div class="Pageheader">
+        <div class="header_text">
+            <h1>MovieMyShow</h1>
+        </div>
+    </div>
     <div class="page_head">
         <h1 id="movid"></h1>  
     </div>
@@ -197,6 +190,11 @@
                 <!-- <button type="button"></button> -->
                 <a href="theaterselect.html" id="bbutton"><span>Book Ticket</span></a>
             </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_text">
+            <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>
         </div>
     </div>
 </body>
