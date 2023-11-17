@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,113 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="commoncss.css">
     <style>
-        .theater_menu{
+        .theater_menu {
             background-color: #363636;
-            /* position: relative; */
             border-radius: 25px;
             margin-top: 30px;
             padding-bottom: 15px;
+            margin-bottom: 30px;
             display: inline-block;
             padding-right: 20px;
-            margin-left: 430px;
+            margin-left: 380px;
         }
 
-        .menu_head{
-            /* position: relative;
-            top: 15px;
-            left: 20px; */
+        .menu_head {
             margin-top: 15px;
             margin-left: 20px;
             padding: 5px;
             background-color: red;
             border-radius: 25px;
             display: inline-block;
-        }
-        .theater_card
-        {
-            /* position: relative;
-            top: 25px;
-            left: 20px; */
-            margin-top: 10px;
-            margin-left: 20px;
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
-            width:600px;
-            height: 120px;
-            /* border: solid red 2px; */
-            display: block;
-            border-radius: 25px; 
-        }
-        .theater_name
-        {
-          /* position: relative;
-          top:15px;
-          left: 15px; */
-          margin-top: 15px;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
-          margin-left: 15px;
-          border: solid red 2px;  
-          display: inline-block;
-          border-radius: 25px;
-          padding: 4px;
         }
 
-        .show_times{
-            /* position: relative;
-            top:30px;
-            left: 15px; */
+        .theater_card {
+            margin-top: 10px;
+            margin-left: 20px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            width: 600px;
+            height: 120px;
+            display: block;
+            border-radius: 25px;
+        }
+
+        .theater_card:hover{
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .theater_name {
+            margin-top: 15px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            margin-left: 15px;
+            border: solid red 2px;
+            display: inline-block;
+            border-radius: 25px;
+            padding: 4px;
+        }
+
+        .show_times {
             margin-top: 30px;
             margin-left: 15px;
         }
 
+        button{
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 25px;
+        }
+        button:focus{
+            background-color: rgb(252, 46, 46);
+        }
+
+        button:hover{
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
+            background-color: rgb(234, 0, 0);
+        }
+
+        #bbutton{
+            display: inline-block;
+            margin-top: 25px;
+            margin-left: 130px;
+            background-color: red;
+            height: 50px;
+            width: 375px;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+        }
+
+        #bbutton:hover{
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+        }
+        #button_text{
+            position: relative;
+            top: 15px;
+            left: 165px;
+        }
+        
     </style>
+    <script>
+        function sednData(theatre, Stime)
+        {
+            localStorage.setItem("Theatre", theatre);
+            localStorage.setItem("ShowTime", Stime);
+        }
+    </script>
 </head>
+
 <body>
+    <div class="Pageheader">
+        <div class="header_text">
+            <h1>MovieMyShow</h1>
+        </div>
+    </div>
     <div class="page_head">
         <h1>Select Theater</h1>
     </div>
@@ -78,33 +125,50 @@
         <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
     <div class="theater_menu">
-            <div class="menu_head">
-                <span>Avaiilable Theaters</span>    
+        <div class="menu_head">
+            <span>Avaiilable Theaters</span>
+        </div>
+        <div class="theater_card">
+            <div class="theater_name"><span>Theater 1</span></div>
+            <div class="show_times">
+                <button onclick="sednData('Th1', 't1')" >time_1</button>
+                <button onclick="sednData('Th1', 't2')" >time_2</button>
+                <button onclick="sednData('Th1', 't3')" >time_3</button>
+                <button onclick="sednData('Th1', 't4')" >time_4</button>
             </div>
-                <div class="theater_card">
-                    <div class="theater_name"><span>Theater 1</span></div>  
-                    <div class="show_times">
-                        <button>time_1</button>
-                        <button>time_2</button>
-                        <button>time_3</button>
-                        <button>time_4</button>
-                    </div>
-                </div>
-                <div class="theater_card">
-                    <div class="theater_name"><span>Theater 2</span></div>  
-                    <div class="show_times">
-                        <button>time_1</button>
-                        <button>time_4</button>
-                    </div>
-                </div>
-                <div class="theater_card">
-                    <div class="theater_name"><span>Theater 3</span></div>  
-                    <div class="show_times">
-                        <button>time_1</button>
-                        <button>time_2</button>
-                        <button>time_3</button>
-                    </div>
-                </div>
+        </div>
+        <div class="theater_card">
+            <div class="theater_name"><span>Theater 2</span></div>
+            <div class="show_times">
+                <button onclick="sednData('Th2', 't1')" >time_1</button>
+                <button onclick="sednData('Th2', 't2')" >time_4</button>
+            </div>
+        </div>
+        <div class="theater_card">
+            <div class="theater_name"><span>Theater 3</span></div>
+            <div class="show_times">
+                <button onclick="sednData('Th3', 't1')" >time_1</button>
+                <button onclick="sednData('Th3', 't2')" >time_2</button>
+                <button onclick="sednData('Th3', 't3')" >time_3</button>
+            </div>
+        </div>
+        <div class="theater_card">
+            <div class="theater_name"><span>Theater 3</span></div>
+            <div class="show_times">
+                <button onclick="sednData('Th4', 't1')" >time_1</button>
+                <button onclick="sednData('Th4', 't2')" >time_2</button>
+                <button onclick="sednData('Th4', 't3')" >time_3</button>
+            </div>
+        </div>
+        <div class="select_button">
+            <a href="selectseat.html" id="bbutton"><span id="button_text">Select</span></a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_text">
+            <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>
+        </div>
     </div>
 </body>
+
 </html>

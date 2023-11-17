@@ -1,37 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="commoncss.css">
 
     <style>
-        .seat_container{
+        .seat_container {
             background-color: #363636;
-            height: 420px;
-            width: 500px;
+            display: inline-block;
             border-radius: 25px;
             margin-top: 30px;
-            margin-left: 470px;
+            margin-left: 450px;
+            margin-bottom: 30px;
         }
 
-        .seat_buttons{
+        .seat_buttons {
             position: relative;
-            top: 60px;
-            left: 75px;
+            top: 50px;
+            left: 68px;
+            display: block;
         }
 
-        button{
-            margin: 12px;
+        input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked {
+            position: absolute;
+            left: -9999%;
         }
 
-        .movie_screen{
-            margin-left: 130px;
+        input[type="checkbox"]+label {
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid white;
+            color: white;
+            background-color: #363636;
+            margin: 5px 10px;
+        }
+
+        input[type="checkbox"]:checked + label{
+            border: 1px solid red;
+            color: black;
+            background-color: red;
+        }
+
+        .movie_screen {
+            margin-left: 120px;
             margin-top: 40px;
+        }
+
+        #bbutton{
+            display: inline-block;
+            margin:15px 50px 25px 50px;
+            background-color: red;
+            height: 50px;
+            width: 375px;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+        }
+
+        #bbutton:hover{
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+        }
+        #button_text{
+            position: relative;
+            top: 15px;
+            left: 165px;
         }
     </style>
 </head>
+
 <body>
+    <div class="Pageheader">
+        <div class="header_text">
+            <h1>MovieMyShow</h1>
+        </div>
+    </div>
     <div class="page_head">
         <h1>Select Seat</h1>
     </div>
@@ -43,40 +89,54 @@
     </div>
     <div class="seat_container">
         <div class="seat_buttons">
-            <button type="button">a1</button>
-            <button type="button">a2</button>
-            <button type="button">a3</button>
-            <button type="button">a4</button>
-            <button type="button">a5</button>
-            <button type="button">a6</button><br>
-            <button type="button">b1</button>
-            <button type="button">b2</button>
-            <button type="button">b3</button>
-            <button type="button">b4</button>
-            <button type="button">b5</button>
-            <button type="button">b6</button><br>
-            <button type="button">c1</button>
-            <button type="button">c2</button>
-            <button type="button">c3</button>
-            <button type="button">c4</button>
-            <button type="button">c5</button>
-            <button type="button">c6</button><br>
-            <button type="button">d1</button>
-            <button type="button">d2</button>
-            <button type="button">d3</button>
-            <button type="button">d4</button>
-            <button type="button">d5</button>
-            <button type="button">d6</button><br>
-            <button type="button">e1</button>
-            <button type="button">e2</button>
-            <button type="button">e3</button>
-            <button type="button">e4</button>
-            <button type="button">e5</button>
-            <button type="button">e6</button>
+            <span>a</span>
+            <input type="checkbox" class="seats"><label for="a1">1</label>
+            <input type="checkbox" class="seats"><label for="a2">2</label>
+            <input type="checkbox" class="seats"><label for="a3">3</label>
+            <input type="checkbox" class="seats"><label for="a4">4</label>
+            <input type="checkbox" class="seats"><label for="a5">5</label>
+            <input type="checkbox" class="seats"><label for="a6">6</label>
+            <br><span>b</span>
+            <input type="checkbox" class="seats"><label for="b1">1</label>
+            <input type="checkbox" class="seats"><label for="b2">2</label>
+            <input type="checkbox" class="seats"><label for="b3">3</label>
+            <input type="checkbox" class="seats"><label for="b4">4</label>
+            <input type="checkbox" class="seats"><label for="b5">5</label>
+            <input type="checkbox" class="seats"><label for="b6">6</label>
+            <br><span>c</span>
+            <input type="checkbox" class="seats"><label for="c1">1</label>
+            <input type="checkbox" class="seats"><label for="c2">2</label>
+            <input type="checkbox" class="seats"><label for="c3">3</label>
+            <input type="checkbox" class="seats"><label for="c4">4</label>
+            <input type="checkbox" class="seats"><label for="c5">5</label>
+            <input type="checkbox" class="seats"><label for="c6">6</label>
+            <br><span>d</span>
+            <input type="checkbox" class="seats"><label for="d1">1</label>
+            <input type="checkbox" class="seats"><label for="d2">2</label>
+            <input type="checkbox" class="seats"><label for="d3">3</label>
+            <input type="checkbox" class="seats"><label for="d4">4</label>
+            <input type="checkbox" class="seats"><label for="d5">5</label>
+            <input type="checkbox" class="seats"><label for="d6">6</label>
+            <br><span>e</span>
+            <input type="checkbox" class="seats"><label for="e1">1</label>
+            <input type="checkbox" class="seats"><label for="e2">2</label>
+            <input type="checkbox" class="seats"><label for="e3">3</label>
+            <input type="checkbox" class="seats"><label for="e4">4</label>
+            <input type="checkbox" class="seats"><label for="e5">5</label>
+            <input type="checkbox" class="seats"><label for="e6">6</label>
         </div>
         <div class="movie_screen">
             <img src="movie_screen_withbg.png" alt="movie_screen" style="width: 240px; height: 120px;">
         </div>
+        <div class="select_button">
+            <a href="payment_page.html" id="bbutton"><span id="button_text">Select</span></a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_text">
+            <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>
+        </div>
     </div>
 </body>
+
 </html>
