@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="commoncss.css">
     <style>
         .available_movies, .upcoming_movies{
+            display: inline-block;
             background-color: #363636;
             border-radius: 25px;
             width: 1450px;
@@ -13,10 +14,12 @@
             margin-top: 25px;
         }
 
-        span{
+        .head_text{
+            display: inline;
             position: relative;
             top: 20px;
             left: 20px;
+            font-size: 25px;
             color: red;
             padding: 5px;
         }
@@ -24,7 +27,7 @@
             margin-bottom: 20px;
         }
         .card{
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
             width: 200px;
             padding: 20px;
             margin: 10px;
@@ -32,7 +35,7 @@
             border-radius: 25px;
         }
         .card:hover {
-            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.7);
             background-color: red;
         }
 
@@ -67,13 +70,13 @@
         </div>
         <div class="topnav">
             <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
-            <a href="my_tickets.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+            <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
             <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
             <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
         </div>
         <div class="available_movies">
             <div class="block_head">
-                <span>Available Movies</span>
+                <p class="head_text"><b>Available Movies</b></p>
             </div>
             <form action="bookticket.php" method="post">
                 <a href="movie_details.php" onclick="sendData(101)"><div class="card">
@@ -82,25 +85,25 @@
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData('movie2')"><div class="card">
+                <a href="movie_details.html" onclick="sendData(102)"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData('movie3')"><div class="card">
+                <a href="movie_details.html" onclick="sendData(103)"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData('movie4')"><div class="card">
+                <a href="movie_details.html" onclick="sendData(104)"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData('movie5')"><div class="card">
+                <a href="movie_details.html" onclick="sendData(105)"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
@@ -111,7 +114,7 @@
 
         <div class="upcoming_movies" style="margin-bottom: 50px;">
             <div class="block_head">
-                <span>Upcoming Movies</span>
+                <p class="head_text"><b>Upcoming Movies</b></p>
             </div>
             <a href="movie_details.html" onclick="sendData('movie6')"><div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">

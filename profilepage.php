@@ -19,59 +19,50 @@
         .profile_box{
             background-color: rgb(54, 54, 54);
             margin: 35px 200px ;
+            padding: 20px;
             border-radius: 25px;
-            height: 500px;
+            height: 460px;
         }
 
         .profile_img{
-            /* position: relative;
-            top: 25px;
-            left: 25px;
-            display: inline-block; */
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
             width: 420px;
             padding: 20px;
-            margin: 10px;
-            border: solid red;
             display: inline-block;
             border-radius: 25px;
         }
+        .info{
+            margin-top:50px;
+        }
+
 
         .profile_about{
-            /* position: relative;
-            left: 60px;
-            top: 25px;
-            background-color: red;
-            height: 420px;
-            width: 600px;
-            border-radius: 25px;
-            display: inline-block; */
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
-            position: relative; 
+            position: absolute; 
             width: 500px;
+            height: 400px;
             padding: 20px;
             border: solid red;
-            margin: 10px;
+            margin-left: 20px;
+            margin-top: 10px;
             display: inline-block;
             border-radius: 25px;
-        }
-
-        .info{
-            
-            border: solid black 5px;
-            margin-top: 100px;
-            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
+    <div class="Pageheader">
+        <div class="header_text">
+            <h1>MovieMyShow</h1>
+        </div>
+    </div>
     <div class="container">
         <div class="page_head">
             <h1 style="color: red;">Profile</h1>
         </div>
         <div class="topnav">
             <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
-            <a href="my_tickets.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+            <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
             <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
             <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
         </div>
@@ -79,15 +70,20 @@
             <div class="profile_img">
                 <img src="mypic.png" alt="pfp" style="border-radius: 25px; width: 400px; border: solid red 10px;">
             </div>
-            <div class="profile_about" style="color: black;">
-                <h3>About</h3><hr>
-                <div class="info">
+            <div class="profile_about">
+                <h2  style="color: white;">About</h2><hr>
+                <div class="info" style="color: white;">
                     <label>username: </label><?php echo $username."<br><br>" ?>
                     <label>Email Id</label><?php echo $email."<br><br>" ?>
                     <label>Phone Number</label><?php echo $phoneno."<br><br>" ?><br> 
                 </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_text">
+            <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>
         </div>
     </div>
 </body>

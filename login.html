@@ -6,6 +6,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="commoncss.css">
     <title>Document</title>
+    <style>
+        .container{
+            background-color: #363636;
+            border-radius: 25px;
+            margin-left: 560px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+            display: inline-block;
+        }
+        .container_head{
+            display: inline-block;
+            margin-top: 10px; 
+        }
+        hr{
+            margin-bottom:20px;
+            margin-top: 0px;
+        }
+
+        .textfields{
+            background-color: #363636;
+            border: none;
+            font-size: 20px;
+            border-bottom: solid red 2px;
+            padding: 10px 0 2px 5px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            display: block;
+            width: 400px;
+            color: white;
+        }
+
+        .textfields:hover{
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        #tca{
+            color: rgba(255, 255, 255, 0.8);
+        }
+        #ca{
+            text-decoration: underline;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        label{
+            margin-bottom: 20px;
+        }
+
+        #sbutton{
+            background-color: red;
+            border: none;
+            margin-top: 20px;
+            width: 400px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            height: 40px;
+            border-radius: 25px;
+        }
+        #sbutton:hover{
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
+        }
+    </style>
 </head>
 <body>
     <div class="Pageheader">
@@ -18,18 +78,26 @@
     </div>
     <div class="topnav">
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
-        <a href="my_tickets.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+        <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
         <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
-    <h2>Login</h2>
-    <form action="login.php" method="post">
-        <input type="text" name="username" placeholder="Enter Username">
-        <br><br>
-        <input type="password" name="pwrd" placeholder="Enter Password">
-        <br><span style="font-size: 10px">Don't have an account? </span>
-        <a href="createaccount.html" style="font-size: 10px">Create an account</a>
-        <br><input type="submit">
-    </form>
+    <div class="container">
+        <h2 class="container_head">Login</h2>
+        <hr>
+        <form action="login.php" method="post">
+            <input type="text" class="textfields" name="username" placeholder="Enter Username">
+            <br><br>
+            <input type="password" class="textfields" name="pwrd" placeholder="Enter Password">
+            <br><span style="font-size: 15px" id="tca">Don't have an account? </span>
+            <a href="createaccount.html" style="font-size: 15px" id="ca">Create an account</a><br>
+            <button type="submit" id="sbutton">Submit</button>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="footer_text">
+            <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>
+        </div>
+    </div>
 </body>
 </html>

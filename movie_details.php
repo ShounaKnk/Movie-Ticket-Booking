@@ -103,11 +103,13 @@
         }
     </style>
     <script>
+        var movi_id = localStorage.getItem('Movie_id');
         function M_name_display()
         {
-            var movi_id = localStorage.getItem('Movie_id');
             document.getElementById('movid').innerHTML = movi_id;
         }
+
+        document.cookie="Mid = "+movi_id;
         
     </script>
 </head>
@@ -122,7 +124,7 @@
     </div>
     <div class="topnav">
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
-        <a href="my_tickets.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+        <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
         <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
@@ -154,8 +156,7 @@
 
                 if($r1)
                 {
-                    while($info=mysqli_fetch_array($r1))
-                    {
+                    $info=mysqli_fetch_array($r1);
                         echo "<br>Movie ID: ".$info['M_id'];
                         echo "<br>Movie Name: ".$info['M_title'];
                         echo "<br>Genre: ".$info['M_genre'];
@@ -163,7 +164,6 @@
                         echo "<br>Director: ".$info['M_desp'];
                         echo "<br>Cast: ".$info['M_cast'];
                         $i++;
-                    }
                 }
                 else
                     echo "error: Login record not inserted";
