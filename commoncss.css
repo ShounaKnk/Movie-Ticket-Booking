@@ -27,7 +27,8 @@ html, body{
 .topnav
 {
     background-color: rgb(54, 54, 54);
-    overflow: auto; 
+    overflow: auto;
+    width: 100%;
 }
 
 .topnav a{
