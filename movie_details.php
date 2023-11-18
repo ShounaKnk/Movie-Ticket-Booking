@@ -1,3 +1,33 @@
+<?php
+        if(isset($_COOKIE['Mid'])){
+            $mid = $_COOKIE['Mid'];
+            $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
+            $q1="select * from movies where M_id='$mid'";
+            $r1=mysqli_query($conn,$q1);
+            $n=mysqli_num_rows($r1);
+            $i=0;
+    
+            if($r1)
+            {
+                $info=mysqli_fetch_array($r1);
+                    $Mname = $info['M_title'];
+                    $genre = $info['M_genre'];
+                    $producer = $info['M_producer'];
+                    $director = $info['M_director'];
+                    $about = $info['M_desp'];
+                    $cast = $info['M_cast'];
+    
+                    $castA = explode(", ", $cast);
+    
+                    $i++;
+            }
+            else
+                echo "error: Login record not inserted";
+            
+            mysqli_close($conn);
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,12 +133,20 @@
         }
     </style>
     <script>
-        var movi_id = localStorage.getItem('Movie_id');
+        var movie_id = localStorage.getItem('Movie_id');
+        var status = localStorage.getItem('status');
+        var movie_name = localStorage.getItem('Movie_name');
+
         function M_name_display()
         {
-            document.getElementById('movid').innerHTML = movi_id;
+            document.getElementById('moviename').innerHTML = movie_name;
+            var poster_name = movie_name+".jpg"
+            document.getElementById("poster_pic").setAttribute("src", poster_name);
         }
-
+        if (status == 'n')
+        {
+            document.getElementByClassName("book_button").style.display = "none";
+        }
         document.cookie="Mid = "+movi_id;
         
     </script>
@@ -120,7 +158,8 @@
         </div>
     </div>
     <div class="page_head">
-        <h1 id="movid"></h1>  
+        <!-- <h1 id="moviename"></h1>   -->
+        <h1 style="color: white;" ><?php echo $Mname; ?></h1>  
     </div>
     <div class="topnav">
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
@@ -131,59 +170,32 @@
     <div class="container">
         <div class="poster_container">
             <div class="movie_poster">
-                <img src="movie_poster.jpg" alt="movie_poster" style="width: 300px;">
+                <img id="poster_pic" src="movie_poster.jpg" alt="movie_poster" style="width: 300px;">
             </div>
         </div>
         <div class="info_container">
             <div class="movie_info_1">
-            <?php
-                $conn=mysqli_connect("localhost","root","","movie");
-
-                if($conn)
-                {
-                    echo "Details:";
-                }
-                else
-                {
-                    echo "error: Logins database not connected";
-                    exit();
-                }
-                
-                $q1="SELECT * FROM MOVIES WHERE M_id='101'";
-                $r1=mysqli_query($conn,$q1);
-                $n=mysqli_num_rows($r1);
-                $i=0;
-
-                if($r1)
-                {
-                    $info=mysqli_fetch_array($r1);
-                        echo "<br>Movie ID: ".$info['M_id'];
-                        echo "<br>Movie Name: ".$info['M_title'];
-                        echo "<br>Genre: ".$info['M_genre'];
-                        echo "<br>Production: ".$info['M_prod'];
-                        echo "<br>Director: ".$info['M_desp'];
-                        echo "<br>Cast: ".$info['M_cast'];
-                        $i++;
-                }
-                else
-                    echo "error: Login record not inserted";
-                
-                mysqli_close($conn);
-            ?>
+                <p> <?php echo $about ?> </p>
             </div>
             <div class="movie_info_2">
                 <div class="info_text">
-                    <label>director: </label>john doe<br><br><br>
-                    <label>writer: </label>john doe<br><br><br>
-                    <label>staff: </label>john doe<br><br><br>
-                    <label>staff: </label>john doe<br>
+                    <label>director: </label><?php echo $director ?><br><br><br>
+                    <label>producer: </label><?php echo $producer ?><br><br><br>
+                    <label>genre: </label><?php echo $genre ?><br><br><br>
                 </div>
             </div>
             <div class="movie_info_3">
                 <div class="info_text">
-                    <label>director: </label>john doe<br><br><br>
-                    <label>writer: </label>john doe<br><br><br>
-                    <label>staff: </label>john doe
+                    <label>Cast: </label>
+                    <hr>
+                    <p>
+                        <?php
+                            foreach($castA as $i)
+                            {
+                                echo $i."<br><br>";
+                            }
+                        ?>
+                    </p>
                 </div>
             </div>
             <div class="book_button">

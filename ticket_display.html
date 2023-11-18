@@ -22,6 +22,21 @@
             width: 700px;
             height: 170px;
             background-color: azure;
+            color: black;
+            border-radius: 25px;
+            padding: 15px;
+            border: solid red 2px;
+        }
+
+        .about{
+            display: inline-block;
+            /* margin: 0 0 0 550px; */
+        }
+        
+        .Mname{
+            margin: 10px 0 0 10px;
+            text-transform: uppercase;
+            display: inline;
         }
     </style>
     <script>
@@ -33,8 +48,6 @@
             document.getElementById('mName').innerHTML=mName;
             document.getElementById('Tname').innerHTML=Tname;
             document.getElementById('showT').innerHTML=showT;
-           
-
         }
     </script>
 
@@ -50,10 +63,14 @@
         <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
     <div class="ticket_container">
-        <div class="ticket_card">
-            <h2 id="Mname" style="display: inline;"></h2><p id="Tname"></p>
-            <br style="border: dashed;">
-            <p id="showT"></p>
+        <div class="ticket_card" >
+            <h2 class="Mname" style="display: inline;">movie name</h2>&emsp;<span class="Tname" >Inox porvorim</span>
+            <hr style="border: dashed red 2px; padding: 0; margin: 2px;">
+            <div class="about">
+                <p style="text-decoration: underline;"><label><b>booking id: </b></label>1234</p>
+                <p><label><b>showtime: </b></label>4:40pm</p>
+                <p><label><b>seats: </b></label>a1 a2 a3</p>
+            </div>
         </div>
         <div class="ticket_card">
 

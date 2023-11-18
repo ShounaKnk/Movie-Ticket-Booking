@@ -51,9 +51,14 @@
     </style>
 
     <script>
-        function sendData(M_id)
+        function sendData(M_id, Movie_name, status)
         {
             localStorage.setItem("Movie_id", M_id);
+            localStorage.setItem("Movie_name", Movie_name);
+            localStorage.setItem("status", status);
+
+            document.cookie = "Mid = "+M_id;
+            document.cookie = "Mn = "+Movie_name;
             return;
         }
     </script>
@@ -79,31 +84,31 @@
                 <p class="head_text"><b>Available Movies</b></p>
             </div>
             <form action="bookticket.php" method="post">
-                <a href="movie_details.php" onclick="sendData(101)"><div class="card">
+                <a href="movie_details.php" onclick="sendData(101, 'M1', 'avl')"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData(102)"><div class="card">
+                <a href="movie_details.html" onclick="sendData(102, 'M1', 'avl')"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData(103)"><div class="card">
+                <a href="movie_details.html" onclick="sendData(103, 'M1', 'avl')"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData(104)"><div class="card">
+                <a href="movie_details.html" onclick="sendData(104, 'M1', 'avl')"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
                     </div>
                 </div></a>
-                <a href="movie_details.html" onclick="sendData(105)"><div class="card">
+                <a href="movie_details.html" onclick="sendData(105, 'M1', 'avl')"><div class="card">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                     <div class="movie_info">
                         <h4 style="text-align: center;">transfomers</h4>
@@ -116,31 +121,31 @@
             <div class="block_head">
                 <p class="head_text"><b>Upcoming Movies</b></p>
             </div>
-            <a href="movie_details.html" onclick="sendData('movie6')"><div class="card">
+            <a href="movie_details.html" onclick="sendData( 106,'movie6', 'n')"><div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                 <div class="movie_info">
                     <h4 style="text-align: center;">transfomers</h4>
                 </div>
             </div></a>
-            <a href="movie_details.html" onclick="sendData('movie7')"><div class="card">
+            <a href="movie_details.html" onclick="sendData(107 ,'movie7', 'n')"><div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                 <div class="movie_info">
                     <h4 style="text-align: center;">transfomers</h4>
                 </div>
             </div></a>
-            <a href="movie_details.html" onclick="sendData('movie8')"><div class="card">
+            <a href="movie_details.html" onclick="sendData(108 ,'movie8', 'n')"><div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                 <div class="movie_info">
                     <h4 style="text-align: center;">transfomers</h4>
                 </div>
             </div></a>
-            <a href="movie_details.html" onclick="sendData('movie9')"><div class="card">
+            <a href="movie_details.html" onclick="sendData(109 ,'movie9', 'n')"><div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                 <div class="movie_info">
                     <h4 style="text-align: center;">transfomers</h4>
                 </div>
             </div></a>
-            <a href="movie_details.html" onclick="sendData('movie10')">
+            <a href="movie_details.html" onclick="sendData(110,'movie10', 'n')" >
                 <div class="card">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
                 <div class="movie_info">

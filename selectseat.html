@@ -70,6 +70,22 @@
             left: 165px;
         }
     </style>
+
+    <script>
+        function sendData(){
+            var selected_seats = "";
+            var seats = document.getElementsByClassName('seats');
+            for(var i=0; i<seats.length; i++)
+            {
+                if(seats[i].checked)
+                {
+                    selected_seats += " "+seats[i].value;
+                }
+            }
+
+            localStorage.setItem("seats", selected_seats);
+        }
+    </script>
 </head>
 
 <body>
@@ -90,46 +106,46 @@
     <div class="seat_container">
         <div class="seat_buttons">
             <span>a</span>
-            <input type="checkbox" class="seats"><label for="a1">1</label>
-            <input type="checkbox" class="seats"><label for="a2">2</label>
-            <input type="checkbox" class="seats"><label for="a3">3</label>
-            <input type="checkbox" class="seats"><label for="a4">4</label>
-            <input type="checkbox" class="seats"><label for="a5">5</label>
-            <input type="checkbox" class="seats"><label for="a6">6</label>
+            <input type="checkbox" class="seats" value="a1"><label for="a1">1</label>
+            <input type="checkbox" class="seats" value="a2"><label for="a2">2</label>
+            <input type="checkbox" class="seats" value="a3"><label for="a3">3</label>
+            <input type="checkbox" class="seats" value="a4"><label for="a4">4</label>
+            <input type="checkbox" class="seats" value="a5"><label for="a5">5</label>
+            <input type="checkbox" class="seats" value="a6"><label for="a6">6</label>
             <br><span>b</span>
-            <input type="checkbox" class="seats"><label for="b1">1</label>
-            <input type="checkbox" class="seats"><label for="b2">2</label>
-            <input type="checkbox" class="seats"><label for="b3">3</label>
-            <input type="checkbox" class="seats"><label for="b4">4</label>
-            <input type="checkbox" class="seats"><label for="b5">5</label>
-            <input type="checkbox" class="seats"><label for="b6">6</label>
+            <input type="checkbox" class="seats" value="b1"><label for="b1">1</label>
+            <input type="checkbox" class="seats" value="b2"><label for="b2">2</label>
+            <input type="checkbox" class="seats" value="b3"><label for="b3">3</label>
+            <input type="checkbox" class="seats" value="b4"><label for="b4">4</label>
+            <input type="checkbox" class="seats" value="b5"><label for="b5">5</label>
+            <input type="checkbox" class="seats" value="b6"><label for="b6">6</label>
             <br><span>c</span>
-            <input type="checkbox" class="seats"><label for="c1">1</label>
-            <input type="checkbox" class="seats"><label for="c2">2</label>
-            <input type="checkbox" class="seats"><label for="c3">3</label>
-            <input type="checkbox" class="seats"><label for="c4">4</label>
-            <input type="checkbox" class="seats"><label for="c5">5</label>
-            <input type="checkbox" class="seats"><label for="c6">6</label>
+            <input type="checkbox" class="seats" value="c1"><label for="c1">1</label>
+            <input type="checkbox" class="seats" value="c2"><label for="c2">2</label>
+            <input type="checkbox" class="seats" value="c3"><label for="c3">3</label>
+            <input type="checkbox" class="seats" value="c4"><label for="c4">4</label>
+            <input type="checkbox" class="seats" value="c5"><label for="c5">5</label>
+            <input type="checkbox" class="seats" value="c6"><label for="c6">6</label>
             <br><span>d</span>
-            <input type="checkbox" class="seats"><label for="d1">1</label>
-            <input type="checkbox" class="seats"><label for="d2">2</label>
-            <input type="checkbox" class="seats"><label for="d3">3</label>
-            <input type="checkbox" class="seats"><label for="d4">4</label>
-            <input type="checkbox" class="seats"><label for="d5">5</label>
-            <input type="checkbox" class="seats"><label for="d6">6</label>
+            <input type="checkbox" class="seats" value="d1"><label for="d1">1</label>
+            <input type="checkbox" class="seats" value="d2"><label for="d2">2</label>
+            <input type="checkbox" class="seats" value="d3"><label for="d3">3</label>
+            <input type="checkbox" class="seats" value="d4"><label for="d4">4</label>
+            <input type="checkbox" class="seats" value="d5"><label for="d5">5</label>
+            <input type="checkbox" class="seats" value="d6"><label for="d6">6</label>
             <br><span>e</span>
-            <input type="checkbox" class="seats"><label for="e1">1</label>
-            <input type="checkbox" class="seats"><label for="e2">2</label>
-            <input type="checkbox" class="seats"><label for="e3">3</label>
-            <input type="checkbox" class="seats"><label for="e4">4</label>
-            <input type="checkbox" class="seats"><label for="e5">5</label>
-            <input type="checkbox" class="seats"><label for="e6">6</label>
+            <input type="checkbox" class="seats" value="e1"><label for="e1">1</label>
+            <input type="checkbox" class="seats" value="e2"><label for="e2">2</label>
+            <input type="checkbox" class="seats" value="e3"><label for="e3">3</label>
+            <input type="checkbox" class="seats" value="e4"><label for="e4">4</label>
+            <input type="checkbox" class="seats" value="e5"><label for="e5">5</label>
+            <input type="checkbox" class="seats" value="e6"><label for="e6">6</label>
         </div>
         <div class="movie_screen">
             <img src="movie_screen_withbg.png" alt="movie_screen" style="width: 240px; height: 120px;">
         </div>
         <div class="select_button">
-            <a href="payment_page.html" id="bbutton"><span id="button_text">Select</span></a>
+            <a href="payment_page.html" onclick="sendData()" id="bbutton"><span id="button_text">Select</span></a>
         </div>
     </div>
     <div class="footer">

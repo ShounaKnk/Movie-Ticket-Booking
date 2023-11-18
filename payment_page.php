@@ -49,6 +49,22 @@
             left: 165px;
         }
     </style>
+    <script>
+        function sendData()
+        {
+            var movie_id = localStorage.getItem("Movie_id");
+            var movie_name = localStorage.getItem("Movie_name");
+            var theater = localStorage.getItem("Theatre");
+            var showtime = localStorage.getItem("ShowTime");
+            var seats = localStorage.getItem("seats");
+
+            document.cookie = "Mid = "+movie_id;
+            document.cookie = "Mn = "+movie_name;
+            document.cookie = "Theater = "+theater;
+            document.cookie = "ShowT = "+showtime;
+            document.cookie = "seats = "+seats;
+        }
+    </script>
 </head>
 <body>
     <div class="Pageheader">
@@ -87,3 +103,26 @@
     </div>
 </body>
 </html>
+<?php
+    function sendToDB(){
+        $movie_id = $_COOKIE['Mid'];
+        $movie_name = $_COOKIE['Mn'];
+        $TheaterN = $_COOKIE['Theater'];
+        $showTime = $_COOKIE['ShowT'];
+        $seats = $_COOKIE['seats'];
+
+        $con = mysqli_connect("localhost","root","","movie_ticket_booking");
+        $q = "insert into tickets values
+                ('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats')";
+        $r = mysqli_query($con, $q);
+        if($r)
+        {
+            echo "<script>alert 'ticket booked'</script>";
+            header("Location: ticket_display_copy.html");
+        }
+        else{
+            echo "error in entering the data";
+        }
+    }
+    sendToDB();
+?>
