@@ -50,20 +50,15 @@
         }
     </style>
     <script>
-        function sendData()
-        {
             var movie_id = localStorage.getItem("Movie_id");
             var movie_name = localStorage.getItem("Movie_name");
             var theater = localStorage.getItem("Theatre");
             var showtime = localStorage.getItem("ShowTime");
             var seats = localStorage.getItem("seats");
 
-            document.cookie = "Mid = "+movie_id;
-            document.cookie = "Mn = "+movie_name;
             document.cookie = "Theater = "+theater;
             document.cookie = "ShowT = "+showtime;
             document.cookie = "seats = "+seats;
-        }
     </script>
 </head>
 <body>
@@ -91,7 +86,7 @@
         <div class="button_container">
             <div class="book_button">
                 <!-- <button type="button"></button> -->
-                <a href="ticket_display.html" id="bbutton"><span>Paid</span></a>
+                <a href="ticket_display.php" id="bbutton"><span>Paid</span></a>
             </div>
         </div>
     </div>
@@ -104,25 +99,43 @@
 </body>
 </html>
 <?php
-    function sendToDB(){
-        $movie_id = $_COOKIE['Mid'];
-        $movie_name = $_COOKIE['Mn'];
-        $TheaterN = $_COOKIE['Theater'];
-        $showTime = $_COOKIE['ShowT'];
-        $seats = $_COOKIE['seats'];
+    // if(isset($_COOKIE['Mid']))
+    // {
+    //     if(isset($_COOKIE['Mn']))
+    //     {
+    //         if(isset($_COOKIE['Theater']))
+    //         {
+    //             if(isset($_COOKIE['ShowT']))
+    //             {
+    //                 if(isset($_COOKIE['seats']))
+    //                 {
+                        
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    $movie_id = $_COOKIE['Mid'];
+    $movie_name = $_COOKIE['Mn'];
+    $TheaterN = $_COOKIE['Theater'];
+    $showTime = $_COOKIE['ShowT'];
+    $seats = $_COOKIE['seats'];
 
-        $con = mysqli_connect("localhost","root","","movie_ticket_booking");
-        $q = "insert into tickets values
-                ('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats')";
-        $r = mysqli_query($con, $q);
-        if($r)
-        {
-            echo "<script>alert 'ticket booked'</script>";
-            header("Location: ticket_display_copy.html");
-        }
-        else{
-            echo "error in entering the data";
-        }
+    echo $movie_id;
+    echo $movie_name;
+    echo $TheaterN;
+    echo $showTime;
+    echo $seats;
+
+    $con = mysqli_connect("localhost","root","","movie_ticket_booking");
+    $q = "insert into tickets values('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats');";
+    $r = mysqli_query($con, $q);
+    if($r)
+    {
+        echo "<script>alert 'ticket booked'</script>";
+        header("Location: ticket_display_copy.html");
     }
-    sendToDB();
+    else{
+        echo "error in entering the data";
+    }
 ?>

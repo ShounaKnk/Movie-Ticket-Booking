@@ -134,24 +134,24 @@
     </style>
     <script>
         var movie_id = localStorage.getItem('Movie_id');
-        var status = localStorage.getItem('status');
+        var Status = localStorage.getItem('status');
         var movie_name = localStorage.getItem('Movie_name');
 
-        function M_name_display()
+        function display()
         {
             document.getElementById('moviename').innerHTML = movie_name;
             var poster_name = movie_name+".jpg"
             document.getElementById("poster_pic").setAttribute("src", poster_name);
-        }
-        if (status == 'n')
-        {
-            document.getElementByClassName("book_button").style.display = "none";
+            if (Status === "n")
+            {
+                document.getElementByClassName("book_button").setAttribute("style", "display: none;");
+            }
         }
         document.cookie="Mid = "+movi_id;
         
     </script>
 </head>
-<body onload="M_name_display()">
+<body onload="display()">
     <div class="Pageheader">
         <div class="header_text">
             <h1>MovieMyShow</h1>
@@ -199,7 +199,6 @@
                 </div>
             </div>
             <div class="book_button">
-                <!-- <button type="button"></button> -->
                 <a href="theaterselect.html" id="bbutton"><span>Book Ticket</span></a>
             </div>
         </div>

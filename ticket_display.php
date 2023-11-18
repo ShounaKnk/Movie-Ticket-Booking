@@ -2,26 +2,29 @@
     $con = mysqli_connect("localhost","root","","movie_ticket_booking");
     if(isset($_COOKIE['Mid']))
     {
+        $mid = $_COOKIE['Mid'];
         $q1="select * from tickets where m_id='$mid'";
-        $r=mysqli_query($conn,$q1);
-        $n=mysqli_num_rows($r1);
-        if($r1)
+        $r=mysqli_query($con,$q1);
+        $n=mysqli_num_rows($r);
+        if($r)
         {
-            $info=mysqli_fetch_array($r1);
-            $bookingtID = $info['b_id'];
-            $movie_id = $info['m_id'];
-            $movie_name = $info['m_name'];
-            $TheaterN = $info['theater'];
-            $showTime = $info['showtime'];
-            $seats = $info['seats'];
+            $info=mysqli_fetch_array($r);
+            if(isset($info))
+            {
+                $bookingtID = $info['b_id'];
+                $movie_id = $info['m_id'];
+                $movie_name = $info['m_name'];
+                $TheaterN = $info['theater'];
+                $showTime = $info['showtime'];
+                $seats = $info['seats'];
+            }
         }
         else
             echo "error in fetching the data";
-        mysqli_close($conn);
+        mysqli_close($con);
     }
     else
         echo "error in fetching the data";
-    
 ?>
 
 
@@ -42,6 +45,7 @@
             padding-right: 20px;
             margin-left: 320px;
             padding: 20px;
+            color: black
         }
 
         .ticket_card{
@@ -74,7 +78,6 @@
     </script>
 
 </head>
-<!-- <body onload="dispDets()"> -->
 <body>
     <div class="page_head">
         <h1>Tickets</h1>
@@ -101,12 +104,12 @@
             </span>
         </div> -->
         <div class="ticket_card" >
-            <h2 class="Mname" style="display: inline;"><?php echo $movie_name?></h2>&emsp;<span class="Tname" ><?php echo $theater ?></span>
+            <h2 class="Mname" style="display: inline;"><?php echo $movie_name; ?></h2>&emsp;<span class="Tname" ><?php echo $TheaterN; ?></span>
             <hr style="border: dashed red 2px; padding: 0; margin: 2px;">
             <div class="about">
-                <p style="text-decoration: underline;"><label><b>booking id: </b></label><?php echo $bookingID ?></p>
-                <p><label><b>showtime: </b></label><?php echo $showTime ?></p>
-                <p><label><b>seats: </b></label><?php echo $seats ?></p>
+                <p style="text-decoration: underline;"><label><b>booking id: </b></label><?php echo $bookingID; ?></p>
+                <p><label><b>showtime: </b></label><?php echo $showTime; ?></p>
+                <p><label><b>seats: </b></label><?php echo $seats; ?></p>
             </div>
         </div>
         <!-- <div class="ticket_card">
