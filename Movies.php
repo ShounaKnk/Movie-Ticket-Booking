@@ -89,7 +89,7 @@
             <a href="display_m.php">Display all movies</a>
         </div>
         <br>
-        <div class="available_movies">
+        <!-- <div class="available_movies">
             <div class="block_head">
                 <p class="head_text"><b>Available Movies</b></p>
             </div>
@@ -119,10 +119,10 @@
                     </div>
                 </div></a> 
             </form>
-        </div>
+        </div> -->
         <div class="available_movies">
             <div class="block_head">
-                <p class="head_text"><b>Added Movies</b></p>
+                <p class="head_text"><b>Added Movies</b></p><br><br>
             </div>
             <?php
                 $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
@@ -139,13 +139,20 @@
                         while($info=mysqli_fetch_array($r1))
                         {
                             echo "<br><br>";
-                            echo "<br>Movie ID: ".$info['M_id'];
-                            echo "<br>Movie Title: ".$info['M_title'];
-                            echo "<br>Movie Genre: ".$info['M_genre'];
-                            echo "<br>Movie Producer: ".$info['M_producer'];
-                            echo "<br>Movie Director: ".$info['M_director'];
-                            echo "<br>Movie Description: ".$info['M_desp'];
-                            echo "<br>Movie Cast: ".$info['M_cast'];
+                            echo "<br><b>Movie ID</b>: ".$info['M_id'];
+                            echo "<br><br><b>Movie Title</b>: ".$info['M_title'];
+                            echo "<br><b>Movie Genre</b>: ".$info['M_genre'];
+                            echo "<br><b>Movie Producer</b>: ".$info['M_producer'];
+                            echo "<br><b>Movie Director</b>: ".$info['M_director'];
+                            echo "<br><b>Movie Description</b>: ".$info['M_desp'];
+                            echo "<br><b>Movie Cast</b>: ".$info['M_cast'];
+                            $Mid = $info['M_id'];
+                            $Mname = $info['M_title'];
+                            $genre = $info['M_genre'];
+                            $producer = $info['M_producer'];
+                            $director = $info['M_director'];
+                            $about = $info['M_desp'];
+                            $cast = $info['M_cast'];
                         }
                     }
                     mysqli_close($conn);

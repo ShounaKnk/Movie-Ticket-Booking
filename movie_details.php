@@ -172,7 +172,7 @@
     <div class="container">
         <div class="poster_container">
             <div class="movie_poster">
-                <img id="poster_pic" src="movie_poster.jpg" alt="movie_poster" style="width: 300px;">
+                <img id="poster_pic" src="movie_posters/<?php echo $Mname ?>.jpg" alt="movie_poster" style="width: 300px;">
             </div>
         </div>
         <div class="info_container">
