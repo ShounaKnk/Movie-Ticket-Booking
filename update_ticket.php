@@ -9,7 +9,7 @@
         $password = $_POST['pword'];
         $phno = $_POST['phno'];
 
-        $q = "insert into user_details values
+        $q = "update tickets set m_name = ''
             ('$username', '$gender' , '$dob', '$email', '$password', '$phno', 'unactive')";
         $r = mysqli_query($con, $q);
         if($r)

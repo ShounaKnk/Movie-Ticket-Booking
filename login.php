@@ -24,6 +24,6 @@
         }
     }
     else{
-        echo "error in fetching data";
+        echo "<script>alert 'script'</script>";
     }
 ?>

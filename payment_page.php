@@ -49,17 +49,6 @@
             left: 165px;
         }
     </style>
-    <script>
-            var movie_id = localStorage.getItem("Movie_id");
-            var movie_name = localStorage.getItem("Movie_name");
-            var theater = localStorage.getItem("Theatre");
-            var showtime = localStorage.getItem("ShowTime");
-            var seats = localStorage.getItem("seats");
-
-            document.cookie = "Theater = "+theater;
-            document.cookie = "ShowT = "+showtime;
-            document.cookie = "seats = "+seats;
-    </script>
 </head>
 <body>
     <div class="Pageheader">
@@ -74,7 +63,9 @@
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
         <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
+        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
+        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i>Theaters</a>
     </div>
     <div class="container">
         <div class="text_container" style="display:block;">
@@ -99,36 +90,14 @@
 </body>
 </html>
 <?php
-    // if(isset($_COOKIE['Mid']))
-    // {
-    //     if(isset($_COOKIE['Mn']))
-    //     {
-    //         if(isset($_COOKIE['Theater']))
-    //         {
-    //             if(isset($_COOKIE['ShowT']))
-    //             {
-    //                 if(isset($_COOKIE['seats']))
-    //                 {
-                        
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
     $movie_id = $_COOKIE['Mid'];
     $movie_name = $_COOKIE['Mn'];
     $TheaterN = $_COOKIE['Theater'];
     $showTime = $_COOKIE['ShowT'];
     $seats = $_COOKIE['seats'];
 
-    echo $movie_id;
-    echo $movie_name;
-    echo $TheaterN;
-    echo $showTime;
-    echo $seats;
-
     $con = mysqli_connect("localhost","root","","movie_ticket_booking");
-    $q = "insert into tickets values('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats');";
+    $q = "insert into tickets values('0007', '$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats');";
     $r = mysqli_query($con, $q);
     if($r)
     {

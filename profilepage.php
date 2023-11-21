@@ -6,6 +6,8 @@
     $username = $info['username'];
     $email = $info['emailID'];
     $phno = $info['phno'];
+
+    
 ?>
 
 
@@ -48,6 +50,33 @@
             display: inline-block;
             border-radius: 25px;
         }
+
+        .book_button{
+            display: inline;
+        }
+
+        .account_func{
+            margin-left: 190px;
+        }
+        #bbutton{
+            display: inline-block;
+            background-color: red;
+            height: 50px;
+            width: 150px;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+        }
+
+        #bbutton:hover{
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+        }
+        span{
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +93,9 @@
             <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
             <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
             <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-            <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
+        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
+        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i>Theaters</a>
         </div>
         <div class="profile_box">
             <div class="profile_img">
@@ -76,6 +107,14 @@
                     <label>username: </label><?php echo $username."<br><br>" ?>
                     <label>Email Id</label><?php echo $email."<br><br>" ?>
                     <label>Phone Number</label><?php echo $phoneno."<br><br>" ?><br> 
+                    <div class="account_func">
+                        <div class="book_button">
+                            <a href="updateProfile.php" id="bbutton"><span>Update Profile</span></a>
+                        </div>
+                        <div class="book_button">
+                            <a href="theaterselect.html" id="bbutton"><span>Delete Account</span></a>
+                    </div>
+                    </div>
                 </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@
         if($r1)
         {
             $info=mysqli_fetch_array($r1);
-            $bookingtID = $info['b_id'];
+            $bookingID = $info['b_id'];
             $movie_id = $info['m_id'];
             $movie_name = $info['m_name'];
             $TheaterN = $info['theater'];
@@ -62,15 +62,7 @@
         }
     </style>
     <script>
-        // function dispDets()
-        // {
-        //     var mName = localStorage.getItem("Movie_name");
-        //     var showT = localStorag.getItem("ShowTime");
-        //     var Tname = localStorage.getItem("Theatre");
-        //     document.getElementById('mName').innerHTML=mName;
-        //     document.getElementById('Tname').innerHTML=Tname;
-        //     document.getElementById('showT').innerHTML=showT;
-        // }
+        
     </script>
 
 </head>
@@ -83,7 +75,9 @@
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
         <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
+        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
+        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i>Theaters</a>
     </div>
     <div class="ticket_container">
         <!-- <div class="ticket_card">

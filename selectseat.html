@@ -23,30 +23,17 @@
             display: block;
         }
 
-        /* input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked {
-            position: absolute;
-            left: -9999%;
-        }
-
-        input[type="checkbox"]+label {
-            display: inline-block;
-            padding: 10px;
-            cursor: pointer;
-            border: 1px solid white;
-            color: white;
-            background-color: #363636;
-            margin: 5px 10px;
-        }
-
-        input[type="checkbox"]:checked + label{
-            border: 1px solid red;
-            color: black;
-            background-color: red;
-        } */
-
         .movie_screen {
             margin-left: 120px;
             margin-top: 40px;
+        }
+
+        .seat_buttons{
+            margin-left: 27px;
+        }
+
+        .seats{
+            margin: 10px;
         }
 
         #bbutton{
@@ -82,9 +69,17 @@
                     selected_seats += " "+seats[i].value;
                 }
             }
-
             localStorage.setItem("seats", selected_seats);
+
+            var movie_id = localStorage.getItem("Movie_id");
+            var movie_name = localStorage.getItem("Movie_name");
+            var theater = localStorage.getItem("Theatre");
+            var showtime = localStorage.getItem("ShowTime");
+            document.cookie = "Theater = "+theater;
+            document.cookie = "seats = "+selected_seats;
+            document.cookie = "ShowT = "+showtime;
         }
+            
     </script>
 </head>
 
@@ -101,7 +96,9 @@
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
         <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
+        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
+        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i>Theaters</a>
     </div>
     <div class="seat_container">
         <div class="seat_buttons">

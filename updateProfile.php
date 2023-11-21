@@ -1,4 +1,15 @@
-    <!DOCTYPE html>
+<?php
+    $con = mysqli_connect("localhost", "root", "", "movie_ticket_booking");
+    $q = "select * from user_details where status = 'active'";
+    $r = mysqli_query($con, $q);
+    $info = mysqli_fetch_array($r);
+    $username = $info['username'];
+    $email = $info['emailID'];
+    $phno = $info['phno'];
+    $pword = $info['password'];
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -79,22 +90,20 @@
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
         <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
-        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
-        <a href="login.html"><i class="fa fa-fw fa-user"></i>Theaters</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
     
     <div class="container">
-        <h2 class="container_head">Sign Up</h2>
+        <h2 class="container_head">Update Profile</h2>
         <hr>
         <form action="signup.php" method="post">
-            <input type="text" class="textfields" name="username" placeholder="Enter Username">
+            <input type="text" class="textfields" name="username" placeholder="Enter Username" value ="<?php echo $username ?>">
             <br><br>
-            <input type="email" class="textfields" name="email" placeholder="Enter Email ID">
+            <input type="text" class="textfields" name="email" placeholder="Enter Email ID" value ="<?php echo $email ?>">
             <br><br>
-            <input type="text" class="textfields" name="pword" placeholder="Enter Password">
+            <input type="text" class="textfields" name="pword" placeholder="Enter Password" value ="<?php echo $pword ?>">
             <br><br>
-            <input type="text" class="textfields" name="phno" placeholder="Enter Phone number">
+            <input type="text" class="textfields" name="phno" placeholder="Enter Phone number" value ="<?php echo $phno ?>">
             <br><br>
             <label>Gender</label><br>
             <input type="radio" id="m" name="gender" value="male">Male&nbsp;
