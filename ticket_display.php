@@ -49,6 +49,35 @@
             text-transform: uppercase;
             display: inline;
         }
+
+        #bbutton{
+            display: inline-block;
+            margin-top: 25px;
+            margin-left: 20px;
+            background-color: red;
+            height: 50px;
+            width: 150px;
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+        }
+
+        #bbutton:hover{
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+        }
+        #button_text{
+            position: relative;
+            top: 15px;
+            left: 55px;
+        }
+        .the_disp
+        {
+            background-color: rgb(54, 54, 54);
+            margin: 35px 200px ;
+            padding: 20px;
+            border-radius: 25px;
+        }
     </style>
 
 </head>
@@ -88,11 +117,12 @@
             mysqli_close($con);
             
         ?>
-        </div>
+        
         <div class="select_button">
             <a href="HomePage.html" id="bbutton"><span id="button_text">Add</span></a>
             <a href="update_ticket.html" id="bbutton"><span id="button_text">Update</span></a>
             <a href="delete_ticket.html" id="bbutton"><span id="button_text">Delete</span></a>
+        </div>
         </div>
         
     </div>
