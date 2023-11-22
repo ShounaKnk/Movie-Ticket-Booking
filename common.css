@@ -1,0 +1,56 @@
+html, body{
+    margin: 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+.Pageheader{
+    background-color: red;
+    height: 80px;
+    color:black;
+}
+
+.header_text{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.page_head{
+    color: red;
+    display: inline-block;
+    position: relative;
+    left: 30px;
+}
+
+.topnav
+{
+    background-color: rgb(54, 54, 54);
+    overflow: auto;
+    width: 100%;
+}
+
+.topnav a{
+    float: left;
+    text-align: center;
+    padding: 20px;
+    color:white;
+    text-decoration: none;
+}
+
+.topnav a:hover{
+    background-color: red;
+    color: black;
+}
+
+i:hover{
+    color:black;
+}
+
+footer{
+    height: 100px;
+    background-color: red;
+    text-align: center;
+    color: white;
+}

@@ -1,5 +1,5 @@
 <?php
-    $conn=mysqli_connect("localhost","root","","movie");
+    $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
     if($conn)
     {
         $M_id=$_POST["m_id"];

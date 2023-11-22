@@ -3,13 +3,16 @@
     $username = $_POST['username'];
     $pword = $_POST['pwrd'];
 
-    $q = "select password from user_details where username = '$username'";
+    $q = "select password, u_ID from user_details where username = '$username'";
     $r = mysqli_query($con, $q);
 
     if($r)
     {
         $info = mysqli_fetch_array($r);
         $p = $info['password'];
+        $uid = $info['u_ID'];
+        setcookie("uid", $value = $uid);
+
         if($p == $pword)
         {
             // header("Location: DMQP_Project/HomePage.html");

@@ -84,7 +84,7 @@
     </div>
     <div class="topnav">
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
-        <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+        <a href="ticket_display.php"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
         <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
         <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
@@ -107,7 +107,7 @@
         </div> -->
         <div class="ticket_card" >
             <h2 class="Mname" style="display: inline;"><?php echo $movie_name; ?></h2>&emsp;<span class="Tname" ><?php echo $TheaterN; ?></span>
-            <hr style="border: dashed red 2px; padding: 0; margin: 2px;">
+            <hr style="border: dashed red 2px; padding: 0; margin: 2px;"> 
             <div class="about">
                 <p style="text-decoration: underline;"><label><b>booking id: </b></label><?php echo $bookingID; ?></p>
                 <p><label><b>showtime: </b></label><?php echo $showTime; ?></p>
