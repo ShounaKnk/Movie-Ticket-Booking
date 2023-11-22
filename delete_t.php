@@ -2,10 +2,10 @@
     $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
     if($conn)
     {
-        $M_id=$_POST["m_id"];
-        $q1="delete from movies where m_id='$M_id'";
+        $T_id=$_POST["tid"];
+        $q1="delete from theatre where T_id='$T_id'";
         $r1=mysqli_query($conn,$q1);
-        header("Location: movie.php");
+        header("Location: theatres.php");
         mysqli_close($conn);
     }
 ?>
