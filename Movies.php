@@ -89,37 +89,7 @@
             <a href="display_m.php">Display all movies</a>
         </div>
         <br>
-        <!-- <div class="available_movies">
-            <div class="block_head">
-                <p class="head_text"><b>Available Movies</b></p>
-            </div>
-            <form action="bookticket.php" method="post">
-                <a href="movie_details.php" onclick="sendData(101, 'M1', 'avl')"><div class="card">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
-                    <div class="movie_info">
-                        <h4 style="text-align: center;">Oppenheimer</h4>
-                    </div>
-                </div></a>
-                <a href="movie_details.html" onclick="sendData(102, 'M1', 'avl')"><div class="card">
-                    <img src="https://www.themoviedb.org/t/p/original/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
-                    <div class="movie_info">
-                        <h4 style="text-align: center;">Barbie</h4>
-                    </div>
-                </div></a>
-                <a href="movie_details.html" onclick="sendData(103, 'M1', 'avl')"><div class="card">
-                    <img src="https://m.media-amazon.com/images/M/MV5BM2U2YWU5NWMtOGI2Ni00MGMwLWFkNjItMjgyZWMxNjllNTMzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
-                    <div class="movie_info">
-                        <h4 style="text-align: center;">The Marvels</h4>
-                    </div>
-                </div></a>
-                <a href="movie_details.html" onclick="sendData(104, 'M1', 'avl')"><div class="card">
-                    <img src="https://www.themoviedb.org/t/p/original/aAngiE34BMFDTOXpjc04Lr8zsX1.jpg" alt="transfomer" style="width: 100%; border-radius: 20px;">
-                    <div class="movie_info">
-                        <h4 style="text-align: center;">Fast X</h4>
-                    </div>
-                </div></a> 
-            </form>
-        </div> -->
+        
         <div class="available_movies">
             <div class="block_head">
                 <p class="head_text"><b>Added Movies</b></p><br><br>

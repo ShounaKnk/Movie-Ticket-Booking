@@ -6,22 +6,7 @@
         $q1="select * from tickets where m_id='$mid'";
         $r=mysqli_query($con,$q1);
         $n=mysqli_num_rows($r);
-        if($r)
-        {
-            $info=mysqli_fetch_array($r);
-            if(isset($info))
-            {
-                $bookingtID = $info['b_id'];
-                $movie_id = $info['m_id'];
-                $movie_name = $info['m_name'];
-                $TheaterN = $info['theater'];
-                $showTime = $info['showtime'];
-                $seats = $info['seats'];
-            }
-        }
-        else
-            echo "error in fetching the data";
-        mysqli_close($con);
+        
     }
     else
         echo "error in fetching the data";
@@ -65,17 +50,6 @@
             display: inline;
         }
     </style>
-    <script>
-        // function dispDets()
-        // {
-        //     var mName = localStorage.getItem("Movie_name");
-        //     var showT = localStorag.getItem("ShowTime");
-        //     var Tname = localStorage.getItem("Theatre");
-        //     document.getElementById('mName').innerHTML=mName;
-        //     document.getElementById('Tname').innerHTML=Tname;
-        //     document.getElementById('showT').innerHTML=showT;
-        // }
-    </script>
 
 </head>
 <body>
@@ -91,20 +65,6 @@
         <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
     </div>
     <div class="ticket_container">
-        <!-- <div class="ticket_card">
-            <h2 id="Mname" style="display: inline;">
-                <?php echo $movie_name?>
-            </h2>
-            <p id="Tname">
-                <?php echo $theater ?>
-            </p>
-            <br style="border: dashed;">
-            <span id="about">
-                <?php echo $bookingID ?>
-                <?php echo $showTime ?>
-                <?php echo $seats ?>
-            </span>
-        </div> -->
         <div class="ticket_card" >
             <h2 class="Mname" style="display: inline;"><?php echo $movie_name; ?></h2>&emsp;<span class="Tname" ><?php echo $TheaterN; ?></span>
             <hr style="border: dashed red 2px; padding: 0; margin: 2px;"> 
@@ -114,15 +74,39 @@
                 <p><label><b>seats: </b></label><?php echo $seats; ?></p>
             </div>
         </div>
-        <!-- <div class="ticket_card">
+        <?php
+            if($r)
+            {
+                while($info=mysqli_fetch_array($r))
+                {
+                    if(isset($info))
+                    {
+                        $bookingID = $info['b_id'];
+                        $movie_id = $info['m_id'];
+                        $movie_name = $info['m_name'];
+                        $TheaterN = $info['theater'];
+                        $showTime = $info['showtime'];
+                        $seats = $info['seats'];
 
-        </div>
-        <div class="ticket_card">
-
-        </div>
-        <div class="ticket_card">
-
-        </div> -->
+                        echo '
+                                <div class="ticket_card" >
+                                <h2 class="Mname" style="display: inline;"><?php echo $movie_name; ?></h2>&emsp;<span class="Tname" ><?php echo $TheaterN; ?></span>
+                                <hr style="border: dashed red 2px; padding: 0; margin: 2px;"> 
+                                <div class="about">
+                                    <p style="text-decoration: underline;"><label><b>booking id: </b></label><?php echo $bookingID; ?></p>
+                                    <p><label><b>showtime: </b></label><?php echo $showTime; ?></p>
+                                    <p><label><b>seats: </b></label><?php echo $seats; ?></p>
+                                </div>
+                            </div>
+                            ';
+                    }
+                }
+            }
+            else
+                echo "error in fetching the data";
+            mysqli_close($con);
+            
+        ?>
     </div>
 </body>
 </html>
