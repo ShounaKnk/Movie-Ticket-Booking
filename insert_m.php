@@ -1,0 +1,19 @@
+<?php
+    $conn=mysqli_connect("localhost","root","","movie");
+    if($conn)
+    {
+        $M_id=$_POST["m_id"];
+        $M_title=$_POST["m_title"];
+        $M_genre=$_POST["m_genre"];
+        $M_prod=$_POST["m_prod"];
+        $M_director=$_POST["m_director"];
+        $M_desp=$_POST["m_desp"];
+        $M_cast=$_POST["m_cast"];
+
+
+        $q1="insert into movies values ('$M_id','$M_title','$M_genre','$M_prod','$M_director','$M_desp','$M_cast')";
+        $r1=mysqli_query($conn,$q1);
+        header("Location: HomePage.php");
+        mysqli_close($conn);
+    }
+?>
