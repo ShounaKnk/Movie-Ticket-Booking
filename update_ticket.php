@@ -2,18 +2,19 @@
     $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
     if($conn)
     {
-        $M_id=$_POST["m_id"];
-        $M_title=$_POST["m_title"];
-        $M_genre=$_POST["m_genre"];
-        $M_prod=$_POST["m_prod"];
-        $M_director=$_POST["m_director"];
-        $M_desp=$_POST["m_desp"];
-        $M_cast=$_POST["m_cast"];
+        $bid = $_POST["bid"];
+        $theater=$_POST["theater"];
+        $showtime=$_POST["showtime"];
+        $seats=$_POST["seats"];
+        $sel_seats ="";
+        for($i =0; $i<30; $i++  )
+        {
+            $sel_seats = $sel_seats." ".$seats[$i];
+        }
 
-
-        $q1="update movies set M_title='$M_title', M_genre='$M_genre', M_producer='$M_prod', M_director='$M_director', M_desp='$M_desp',M_cast='$M_cast' where M_id='$M_id'";
+        $q1="update movies set theater='$theater', showtime='$showtime', seats='$seats' where b_id='$bid'";
         $r1=mysqli_query($conn,$q1);
-        header("Location: movie.php");
+        header("Location: ticket_display.php");
         mysqli_close($conn);
     }
 ?>
