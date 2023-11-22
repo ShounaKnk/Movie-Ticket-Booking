@@ -95,7 +95,7 @@
             <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
         <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
         <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
-        <a href="login.html"><i class="fa fa-fw fa-user"></i>Theaters</a>
+        <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
         </div>
         <div class="profile_box">
             <div class="profile_img">
@@ -104,15 +104,15 @@
             <div class="profile_about">
                 <h2  style="color: white;">About</h2><hr>
                 <div class="info" style="color: white;">
-                    <label>username: </label><?php echo $username."<br><br>" ?>
-                    <label>Email Id</label><?php echo $email."<br><br>" ?>
-                    <label>Phone Number</label><?php echo $phoneno."<br><br>" ?><br> 
+                    <label style="font-size: 20px"><b>username: </b></label><?php echo "  ".$username."<br><br>" ?>
+                    <label style="font-size: 20px"><b>Email Id:</b></label><?php echo "  ".$email."<br><br>" ?>
+                    <label style="font-size: 20px"><b>Phone Number:</b></label><?php echo "  ".$phno ."<br><br>" ?><br> 
                     <div class="account_func">
                         <div class="book_button">
-                            <a href="updateProfile.php" id="bbutton"><span>Update Profile</span></a>
+                            <a href="updateProfile.php" id="bbutton"><span>Update Profile:</span></a>
                         </div>
                         <div class="book_button">
-                            <a href="theaterselect.html" id="bbutton"><span>Delete Account</span></a>
+                            <a href="theaterselect.html" id="bbutton"><span>Delete Account: </span></a>
                     </div>
                     </div>
                 </div>

@@ -75,11 +75,12 @@
             <i class="fa fa-thumbs-o-up"></i>
         </div>
         <div class="button_container">
+            <form action="finalDATA()">
             <div class="book_button">
-                <!-- <button type="button"></button> -->
                 <a href="ticket_display.php" id="bbutton"><span>Paid</span></a>
             </div>
         </div>
+            </form>
     </div>
     
     <div class="footer">
@@ -90,21 +91,24 @@
 </body>
 </html>
 <?php
-    $movie_id = $_COOKIE['Mid'];
-    $movie_name = $_COOKIE['Mn'];
-    $TheaterN = $_COOKIE['Theater'];
-    $showTime = $_COOKIE['ShowT'];
-    $seats = $_COOKIE['seats'];
-
-    $con = mysqli_connect("localhost","root","","movie_ticket_booking");
-    $q = "insert into tickets values('0007', '$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats');";
-    $r = mysqli_query($con, $q);
-    if($r)
+    function finalDATA()
     {
-        echo "<script>alert 'ticket booked'</script>";
-        header("Location: ticket_display_copy.html");
-    }
-    else{
-        echo "error in entering the data";
+        $movie_id = $_COOKIE['Mid'];
+        $movie_name = $_COOKIE['Mn'];
+        $TheaterN = $_COOKIE['Theater'];
+        $showTime = $_COOKIE['ShowT'];
+        $seats = $_COOKIE['seats'];
+
+        $con = mysqli_connect("localhost","root","","movie_ticket_booking");
+        $q = "insert into tickets(m_id, m_name, theater, showtime, seats) values('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats');";
+        $r = mysqli_query($con, $q);
+        if($r)
+        {
+            echo "<script>alert 'ticket booked'</script>";
+            header("Location: ticket_display.html");
+        }
+        else{
+            echo "error in entering the data";
+        }
     }
 ?>

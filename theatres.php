@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Theatre_doc</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="commoncss.css">
     <style>
@@ -77,16 +77,13 @@
             background-color: rgb(234, 0, 0);
         }
 
-        .book_button{
-            display: inline-block;
-        }
         #bbutton{
             display: inline-block;
             margin-top: 25px;
-            margin-left: 130px;
+            margin-left: 20px;
             background-color: red;
             height: 50px;
-            width: 100px;
+            width: 150px;
             box-shadow: 0px 20px 15px rgba(0,0,0,0.3);
             text-decoration: none;
             color: white;
@@ -97,9 +94,9 @@
             box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
         }
         #button_text{
-            text-align: center;
+            position: relative;
             top: 15px;
-            left: 165px;
+            left: 55px;
         }
         
     </style>
@@ -115,7 +112,7 @@
 <body>
     <div class="Pageheader">
         <div class="header_text">
-            <h1>MovieMyShow</h1>
+            <h1 style="text-align:center">MovieMyShow</h1>
         </div>
     </div>
     <div class="page_head">
@@ -125,9 +122,7 @@
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
         <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
-        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
-        <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
+        <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
     <div class="theater_menu">
         <div class="menu_head">
@@ -136,40 +131,39 @@
         <div class="theater_card">
             <div class="theater_name"><span>Theater 1</span></div>
             <div class="show_times">
-                <button onclick="sednData('Th1', 't1')" >time_1</button>
-                <button onclick="sednData('Th1', 't2')" >time_2</button>
-                <button onclick="sednData('Th1', 't3')" >time_3</button>
-                <button onclick="sednData('Th1', 't4')" >time_4</button>
+                <button onclick="sednData('Th1', 't1')" >9 am</button>
+                <button onclick="sednData('Th1', 't2')" >11 am</button>
+                <button onclick="sednData('Th1', 't3')" >12 pm</button>
+                <button onclick="sednData('Th1', 't4')" >2 pm</button>
             </div>
         </div>
         <div class="theater_card">
             <div class="theater_name"><span>Theater 2</span></div>
             <div class="show_times">
-                <button onclick="sednData('Th2', 't1')" >time_1</button>
-                <button onclick="sednData('Th2', 't2')" >time_4</button>
+                <button onclick="sednData('Th2', 't1')" >12 pm</button>
+                <button onclick="sednData('Th2', 't2')" >1 pm</button>
             </div>
         </div>
         <div class="theater_card">
             <div class="theater_name"><span>Theater 3</span></div>
             <div class="show_times">
-                <button onclick="sednData('Th3', 't1')" >time_1</button>
-                <button onclick="sednData('Th3', 't2')" >time_2</button>
-                <button onclick="sednData('Th3', 't3')" >time_3</button>
+                <button onclick="sednData('Th3', 't1')" >9 pm</button>
+                <button onclick="sednData('Th3', 't2')" >5 pm</button>
+                <button onclick="sednData('Th3', 't3')" >7 pm</button>
             </div>
         </div>
         <div class="theater_card">
             <div class="theater_name"><span>Theater 3</span></div>
             <div class="show_times">
-                <button onclick="sednData('Th4', 't1')" >time_1</button>
-                <button onclick="sednData('Th4', 't2')" >time_2</button>
-                <button onclick="sednData('Th4', 't3')" >time_3</button>
+                <button onclick="sednData('Th4', 't1')" >8 pm</button>
+                <button onclick="sednData('Th4', 't2')" >9 pm</button>
+                <button onclick="sednData('Th4', 't3')" >10 pm</button>
             </div>
         </div>
         <div class="select_button">
-            <a href="selectseat.html" id="bbutton"><span id="button_text">Select</span></a>
-        </div>
-        <div class="select_button">
-            <a href="selectseat.html" id="bbutton"><span id="button_text">Select</span></a>
+            <a href="add_theatre.html" id="bbutton"><span id="button_text">Add</span></a>
+            <a href="update_theatre.html" id="bbutton"><span id="button_text">Update</span></a>
+            <a href="delete_theatre.html" id="bbutton"><span id="button_text">Delete</span></a>
         </div>
     </div>
     <div class="footer">

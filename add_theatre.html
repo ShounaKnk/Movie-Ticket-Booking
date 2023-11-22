@@ -1,9 +1,9 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adding Theatre</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="commoncss.css">
     <style>
@@ -69,44 +69,35 @@
 <body>
     <div class="Pageheader">
         <div class="header_text">
-            <h1>MovieMyShow</h1>
+            <h1 style="text-align:center">MovieMyShow</h1>
         </div>
     </div>
     <div class="page_head">
-        <h2>Movie Ticket Booking</h2>
+        <h2>Adding a New Theatre</h2>
     </div>
     <div class="topnav">
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
         <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
-        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
-        <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
     
     <div class="container">
-        <h2 class="container_head">Sign Up</h2>
+        <h2 class="container_head" style="color:grey">Enter details</h2>
         <hr>
         <form action="signup.php" method="post">
-            <input type="text" class="textfields" name="username" placeholder="Enter Username">
+	    <input type="text" class="textfields" name="tid" placeholder="Theatre ID">
             <br><br>
-            <input type="email" class="textfields" name="email" placeholder="Enter Email ID">
+            <input type="text" class="textfields" name="tname" placeholder="Theatre Name">
             <br><br>
-            <input type="text" class="textfields" name="pword" placeholder="Enter Password">
+            <input type="text" class="textfields" name="tlocation" placeholder="Theatre Location">
             <br><br>
-            <input type="text" class="textfields" name="phno" placeholder="Enter Phone number">
+            <input type="text" class="textfields" name="tcapacity" placeholder="Theatre Capacity">
             <br><br>
-            <label>Gender</label><br>
-            <input type="radio" id="m" name="gender" value="male">Male&nbsp;
-            <input type="radio" id="f" name="gender" value="female">female&nbsp;
-            <input type="radio" id="o" name="gender" value="others">Others&nbsp;
-            <br><br>
-            <label>Date of Birth</label><br>
-            <input type="date" name="dob">
-            <br><br>
+           
             <input type="checkbox" checked id="prsnlz">I agree to share my data for personalized expirience<br>
-            <input type="checkbox">I agree to <a href="tc.txt" id="tc">terms and conditions</a><br>
-            <button type="submit" id="sbutton">Submit</button>
+            <input type="checkbox">I agree to <a href="tc.txt" id="tc"> terms and conditions</a><br>
+            <button type="submit" id="sbutton">Add Theatre</button>
         </form>     
     </div>
     <div class="footer">

@@ -90,7 +90,7 @@
         <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
         <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
         <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="login.html"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
+        <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Login / Signup</a>
     </div>
     
     <div class="container">
