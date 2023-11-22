@@ -1,25 +1,19 @@
 <?php
-    function get_data()
+    $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
+    if($conn)
     {
-        $con = mysqli_connect("localhost","root","","movie_ticket_booking");
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $gender = $_POST['gender'];
-        $dob = $_POST['dob'];
-        $password = $_POST['pword'];
-        $phno = $_POST['phno'];
+        $M_id=$_POST["m_id"];
+        $M_title=$_POST["m_title"];
+        $M_genre=$_POST["m_genre"];
+        $M_prod=$_POST["m_prod"];
+        $M_director=$_POST["m_director"];
+        $M_desp=$_POST["m_desp"];
+        $M_cast=$_POST["m_cast"];
 
-        $q = "update tickets set m_name = ''
-            ('$username', '$gender' , '$dob', '$email', '$password', '$phno', 'unactive')";
-        $r = mysqli_query($con, $q);
-        if($r)
-        {
-            echo "data entered successfully";
-            header("Location: login.html");
-        }
-        else{
-            echo "error in entering the data";
-        }
+
+        $q1="update movies set M_title='$M_title', M_genre='$M_genre', M_producer='$M_prod', M_director='$M_director', M_desp='$M_desp',M_cast='$M_cast' where M_id='$M_id'";
+        $r1=mysqli_query($conn,$q1);
+        header("Location: movie.php");
+        mysqli_close($conn);
     }
-    get_data();
 ?>
