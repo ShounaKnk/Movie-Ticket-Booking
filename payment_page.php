@@ -22,5 +22,5 @@
         }
     }
     finalDATA();
-    // header("Location: ticket_display.php");
+    header("Location: ticket_display.php");
 ?>
