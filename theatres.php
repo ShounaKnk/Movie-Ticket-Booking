@@ -98,7 +98,13 @@
             top: 15px;
             left: 55px;
         }
-        
+        .the_disp
+        {
+            background-color: rgb(54, 54, 54);
+            margin: 35px 200px ;
+            padding: 20px;
+            border-radius: 25px;
+        }
     </style>
     <script>
         function sednData(theatre, Stime)
@@ -128,42 +134,38 @@
         <div class="menu_head">
             <span>Avaiilable Theaters</span>
         </div>
-        <div class="theater_card">
-            <div class="theater_name"><span>Theater 1</span></div>
-            <div class="show_times">
-                <button onclick="sednData('Th1', 't1')" >9 am</button>
-                <button onclick="sednData('Th1', 't2')" >11 am</button>
-                <button onclick="sednData('Th1', 't3')" >12 pm</button>
-                <button onclick="sednData('Th1', 't4')" >2 pm</button>
-            </div>
-        </div>
-        <div class="theater_card">
-            <div class="theater_name"><span>Theater 2</span></div>
-            <div class="show_times">
-                <button onclick="sednData('Th2', 't1')" >12 pm</button>
-                <button onclick="sednData('Th2', 't2')" >1 pm</button>
-            </div>
-        </div>
-        <div class="theater_card">
-            <div class="theater_name"><span>Theater 3</span></div>
-            <div class="show_times">
-                <button onclick="sednData('Th3', 't1')" >9 pm</button>
-                <button onclick="sednData('Th3', 't2')" >5 pm</button>
-                <button onclick="sednData('Th3', 't3')" >7 pm</button>
-            </div>
-        </div>
-        <div class="theater_card">
-            <div class="theater_name"><span>Theater 3</span></div>
-            <div class="show_times">
-                <button onclick="sednData('Th4', 't1')" >8 pm</button>
-                <button onclick="sednData('Th4', 't2')" >9 pm</button>
-                <button onclick="sednData('Th4', 't3')" >10 pm</button>
-            </div>
+        <div class="the_disp">
+            <?php
+                $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
+                if($conn)
+                {
+                    $q1="select * from theatre";
+                    $r1=mysqli_query($conn,$q1);
+                    $n=mysqli_num_rows($r1);
+
+                    echo "TOTAL THEATRES ARE: ".$n;
+
+                    if($r1)
+                    {
+                        while($info=mysqli_fetch_array($r1))
+                        {
+                            echo "<br><br>";
+                            echo "<br>Theatre ID: ".$info['T_id'];
+                            echo "<br>Theatre Name: ".$info['T_name'];
+                            echo "<br>Theatre Location: ".$info['T_location'];
+                            echo "<br>Theatre Capacity: ".$info['T_capacity'];
+                            echo "<br>Theatre Screens: ".$info['T_screens'];
+                            echo "<br>Theatre Owner: ".$info['T_owner'];
+                        }
+                    }
+                    mysqli_close($conn);
+                }
+            ?>
         </div>
         <div class="select_button">
-            <a href="add_theatre.html" id="bbutton"><span id="button_text">Add</span></a>
-            <a href="update_theatre.html" id="bbutton"><span id="button_text">Update</span></a>
-            <a href="delete_theatre.html" id="bbutton"><span id="button_text">Delete</span></a>
+            <a href="insert_t.html" id="bbutton"><span id="button_text">Add</span></a>
+            <a href="update_t.html" id="bbutton"><span id="button_text">Update</span></a>
+            <a href="delete_t.html" id="bbutton"><span id="button_text">Delete</span></a>
         </div>
     </div>
     <div class="footer">

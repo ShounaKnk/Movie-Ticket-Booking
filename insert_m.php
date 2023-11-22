@@ -13,7 +13,7 @@
 
         $q1="insert into movies values ('$M_id','$M_title','$M_genre','$M_prod','$M_director','$M_desp','$M_cast')";
         $r1=mysqli_query($conn,$q1);
-        header("Location: HomePage.php");
+        header("Location: movie.php");
         mysqli_close($conn);
     }
 ?>

@@ -13,7 +13,7 @@
 
         $q1="update movies set M_title='$M_title', M_genre='$M_genre', M_producer='$M_prod', M_director='$M_director', M_desp='$M_desp',M_cast='$M_cast' where M_id='$M_id'";
         $r1=mysqli_query($conn,$q1);
-        header("Location: HomePage.php");
+        header("Location: movie.php");
         mysqli_close($conn);
     }
 ?>

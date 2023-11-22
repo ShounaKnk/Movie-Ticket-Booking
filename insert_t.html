@@ -85,18 +85,19 @@
     <div class="container">
         <h2 class="container_head" style="color:grey">Enter details</h2>
         <hr>
-        <form action="signup.php" method="post">
-	    <input type="text" class="textfields" name="tid" placeholder="Theatre ID">
+        <form action="insert_t.php" method="post">
+	    <input type="text" class="textfields" name="tid" placeholder="Theatre ID" required>
             <br><br>
-            <input type="text" class="textfields" name="tname" placeholder="Theatre Name">
+            <input type="text" class="textfields" name="tname" placeholder="Theatre Name" required>
             <br><br>
-            <input type="text" class="textfields" name="tlocation" placeholder="Theatre Location">
+            <input type="text" class="textfields" name="tlocation" placeholder="Theatre Location" required>
             <br><br>
-            <input type="text" class="textfields" name="tcapacity" placeholder="Theatre Capacity">
+            <input type="text" class="textfields" name="tcapacity" placeholder="Theatre Capacity" required>
             <br><br>
-           
-            <input type="checkbox" checked id="prsnlz">I agree to share my data for personalized expirience<br>
-            <input type="checkbox">I agree to <a href="tc.txt" id="tc"> terms and conditions</a><br>
+            <input type="text" class="textfields" name="tscreens" placeholder="Theatre Screens" required>
+            <br><br>
+            <input type="text" class="textfields" name="towner" placeholder="Theatre Owner" required>
+            <br><br>
             <button type="submit" id="sbutton">Add Theatre</button>
         </form>     
     </div>
