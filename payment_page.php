@@ -48,6 +48,19 @@
             top: 15px;
             left: 165px;
         }
+        
+        #sbutton{
+            background-color: red;
+            border: none;
+            margin-top: 20px;
+            width: 400px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            height: 40px;
+            border-radius: 25px;
+        }
+        #sbutton:hover{
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
+        }
     </style>
 </head>
 <body>
@@ -75,9 +88,11 @@
             <i class="fa fa-thumbs-o-up"></i>
         </div>
         <div class="button_container">
-            <form action="finalDATA()">
+            <form action="payment_page.php">
             <div class="book_button">
-                <a href="ticket_display.php" id="bbutton"><span>Paid</span></a>
+                <!-- <a href="ticket_display.php" id="bbutton"><span>Paid</span></a> -->
+                <button type="submit" id="sbutton">Submit</button>
+
             </div>
         </div>
             </form>
@@ -93,22 +108,26 @@
 <?php
     function finalDATA()
     {
-        $movie_id = $_COOKIE['Mid'];
-        $movie_name = $_COOKIE['Mn'];
-        $TheaterN = $_COOKIE['Theater'];
-        $showTime = $_COOKIE['ShowT'];
-        $seats = $_COOKIE['seats'];
-
-        $con = mysqli_connect("localhost","root","","movie_ticket_booking");
-        $q = "insert into tickets(m_id, m_name, theater, showtime, seats) values('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats');";
-        $r = mysqli_query($con, $q);
-        if($r)
+        if(isset($_COOKIE['Mid']))
         {
-            echo "<script>alert 'ticket booked'</script>";
-            header("Location: ticket_display.html");
-        }
-        else{
-            echo "error in entering the data";
+            $movie_id = $_COOKIE['Mid'];
+            $movie_name = $_COOKIE['Mn'];
+            $TheaterN = $_COOKIE['Theater'];
+            $showTime = $_COOKIE['ShowT'];
+            $seats = $_COOKIE['seats'];
+    
+            $con = mysqli_connect("localhost","root","","movie_ticket_booking");
+            $q = "insert into tickets (m_id, m_name, theater, showtime, seats) values ('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats')";
+            $r = mysqli_query($con, $q);
+            if($r)
+            {
+                echo '<script>alert ("ticket booked")</script>';
+            }
+            else{
+                echo "error in entering the data";
+            }
         }
     }
+    finalDATA();
+    header("Location: ticket_display.php");
 ?>
