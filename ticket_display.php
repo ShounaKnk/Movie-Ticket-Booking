@@ -3,10 +3,9 @@
     if(isset($_COOKIE['Mid']))
     {
         $mid = $_COOKIE['Mid'];
-        $q1="select * from tickets where m_id='$mid'";
+        $q1="select * from tickets";
         $r=mysqli_query($con,$q1);
         $n=mysqli_num_rows($r);
-        
     }
     else
         echo "error in fetching the data";
@@ -30,7 +29,8 @@
             padding-right: 20px;
             margin-left: 320px;
             padding: 20px;
-            color: black
+            width: 700px;
+            color: white;
         }
 
         .ticket_card{
@@ -65,40 +65,21 @@
         <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
     </div>
     <div class="ticket_container">
-        <div class="ticket_card" >
-            <h2 class="Mname" style="display: inline;"><?php echo $movie_name; ?></h2>&emsp;<span class="Tname" ><?php echo $TheaterN; ?></span>
-            <hr style="border: dashed red 2px; padding: 0; margin: 2px;"> 
-            <div class="about">
-                <p style="text-decoration: underline;"><label><b>booking id: </b></label><?php echo $bookingID; ?></p>
-                <p><label><b>showtime: </b></label><?php echo $showTime; ?></p>
-                <p><label><b>seats: </b></label><?php echo $seats; ?></p>
-            </div>
-        </div>
-        <?php
+    <?php
             if($r)
             {
+                echo "TOTAL MOVIES ARE: ".$n;
                 while($info=mysqli_fetch_array($r))
                 {
                     if(isset($info))
                     {
-                        $bookingID = $info['b_id'];
-                        $movie_id = $info['m_id'];
-                        $movie_name = $info['m_name'];
-                        $TheaterN = $info['theater'];
-                        $showTime = $info['showtime'];
-                        $seats = $info['seats'];
-
-                        echo '
-                                <div class="ticket_card" >
-                                <h2 class="Mname" style="display: inline;"><?php echo $movie_name; ?></h2>&emsp;<span class="Tname" ><?php echo $TheaterN; ?></span>
-                                <hr style="border: dashed red 2px; padding: 0; margin: 2px;"> 
-                                <div class="about">
-                                    <p style="text-decoration: underline;"><label><b>booking id: </b></label><?php echo $bookingID; ?></p>
-                                    <p><label><b>showtime: </b></label><?php echo $showTime; ?></p>
-                                    <p><label><b>seats: </b></label><?php echo $seats; ?></p>
-                                </div>
-                            </div>
-                            ';
+                        echo "<br><br>";
+                            echo "<br>Booking ID: ".$info['b_id'];
+                            echo "<br>Movie ID: ".$info['m_id'];
+                            echo "<br>Movie Name: ".$info['m_name'];
+                            echo "<br>Theater Name: ".$info['theater'];
+                            echo "<br>Showtime: ".$info['showtime'];
+                            echo "<br>Seats: ".$info['seats'];
                     }
                 }
             }
@@ -107,6 +88,8 @@
             mysqli_close($con);
             
         ?>
+        </div>
+        
     </div>
 </body>
 </html>
