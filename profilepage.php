@@ -109,10 +109,10 @@
                     <label style="font-size: 20px"><b>Phone Number:</b></label><?php echo "  ".$phno ."<br><br>" ?><br> 
                     <div class="account_func">
                         <div class="book_button">
-                            <a href="updateProfile.php" id="bbutton"><span>Update Profile:</span></a>
+                            <a href="update_user.html" id="bbutton"><span>Update Profile</span></a>
                         </div>
                         <div class="book_button">
-                            <a href="theaterselect.html" id="bbutton"><span>Delete Account: </span></a>
+                            <a href="delete_user.html" id="bbutton"><span>Delete Account</span></a>
                     </div>
                     </div>
                 </div>
