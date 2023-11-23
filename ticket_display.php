@@ -1,8 +1,7 @@
 <?php
     $con = mysqli_connect("localhost","root","","movie_ticket_booking");
-    if(isset($_COOKIE['Mid']))
+    if($con)
     {
-        $mid = $_COOKIE['Mid'];
         $q1="select * from tickets";
         $r=mysqli_query($con,$q1);
         $n=mysqli_num_rows($r);
@@ -31,11 +30,12 @@
             padding: 20px;
             width: 700px;
             color: white;
+            /* text-align: center; */
         }
 
         .ticket_card{
             margin-top: 20px;
-            width: 700px;
+            width: 680px;
             height: 170px;
             background-color: azure;
         }
@@ -48,6 +48,10 @@
             margin: 10px 0 0 10px;
             text-transform: uppercase;
             display: inline;
+        }
+
+        .select_button{
+            margin-left: 70px;
         }
 
         #bbutton{
@@ -102,13 +106,24 @@
                 {
                     if(isset($info))
                     {
-                        echo "<br><br>";
-                            echo "<br>Booking ID: ".$info['b_id'];
-                            echo "<br>Movie ID: ".$info['m_id'];
-                            echo "<br>Movie Name: ".$info['m_name'];
-                            echo "<br>Theater Name: ".$info['theater'];
-                            echo "<br>Showtime: ".$info['showtime'];
-                            echo "<br>Seats: ".$info['seats'];
+                            $bookingID = $info['b_id'];
+                            $mID = $info['m_id'];
+                            $movie_name = $info['m_name'];
+                            $TheaterN = $info['theater'];
+                            $showtime = $info['showtime'];
+                            $seats = $info['seats'];
+
+                        echo '
+                        <div class="ticket_card" style="color: black; border-radius: 25px; padding: 10px;" >
+                        <h2 class="Mname" style="display: inline;">'.$movie_name.'</h2>&emsp;<span class="Tname" >'.$TheaterN.'</span>
+                        <hr style="border: dashed red 2px; padding: 0; margin: 2px;">
+                        <div class="about">
+                            <p style="text-decoration: underline;"><label><b>booking id: </b></label>'.$bookingID.'</p>
+                            <p><label><b>showtime: </b></label>'.$showtime.'</p>
+                            <p><label><b>seats: </b></label>'.$seats.'</p>
+                        </div>
+                    </div>
+                        ';
                     }
                 }
             }

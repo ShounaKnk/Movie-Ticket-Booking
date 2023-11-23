@@ -9,6 +9,7 @@ html, body{
     background-color: red;
     height: 80px;
     color:black;
+    display: block;
 }
 
 .header_text{
@@ -19,9 +20,8 @@ html, body{
 
 .page_head{
     color: red;
-    display: inline-block;
-    position: relative;
-    left: 30px;
+    display: block;
+    height: 70px;
 }
 
 .topnav
@@ -57,5 +57,5 @@ i:hover{
     position: absolute;
     text-align: center;
     margin-top: 10px;
-    margin-left: 607px;
+    margin-left: 620px;
 }
