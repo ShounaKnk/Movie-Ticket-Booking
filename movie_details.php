@@ -161,14 +161,14 @@
         <!-- <h1 id="moviename"></h1>   -->
         <h1 style="color: white;" ><?php echo $Mname; ?></h1>  
     </div>
-    <div class="topnav">
-        <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
-        <a href="ticket_display.html"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
-        <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
-        <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
-        <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
-        <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
-    </div>
+        <div class="topnav">
+            <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
+            <a href="ticket_display.php"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+            <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
+            <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
+            <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
+            <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
+        </div>
     <div class="container">
         <div class="poster_container">
             <div class="movie_poster">
