@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="commoncss.css">
+  <style>
+    .container{
+      height: 500px;
+    }
+
+    .button_container{
+        width: 400px;
+        height: 400px;
+        background-color: #363636;
+        margin-top: 50px;
+        margin-left: 450px;
+        border-radius: 25px;
+        padding: 20px;
+    }
+  </style>
+  <script>
+      function sendData(M_id, Movie_name, status)
+      {
+          localStorage.setItem("Movie_id", M_id);
+          localStorage.setItem("Movie_name", Movie_name);
+          localStorage.setItem("status", status);
+
+          document.cookie = "Mid = "+M_id;
+          document.cookie = "Mn = "+Movie_name;
+          return;
+      }
+  </script>
+</head>
+<body>
+  <div class="container">
+      <div class="Pageheader">
+          <div class="header_text">
+              <h1>MovieMyShow</h1>
+          </div>
+      </div>
+      <div class="page_head">
+          <h2>HOME</h2>
+      </div>
+      <div class="topnav">
+          <a href="HomePage.html"><i class="fa fa-home">Home</i></a>
+          <a href="ticket_display.php"><i class="fa fa-fw fa-ticket"></i>My Ticket</i></a>
+          <a href="about_us.html"><i class="fa fa-fw fa-phone"></i>Contact Us</a>
+          <a href="profilepage.php"><i class="fa fa-fw fa-user"></i>Profile</a>
+          <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
+          <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
+      </div>
+      <div class="container">
+        <div class="button_container">
+            <h2>Joins and Aggregate</h2>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer_text">
+            <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
