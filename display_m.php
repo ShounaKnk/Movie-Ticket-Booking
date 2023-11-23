@@ -47,6 +47,36 @@
             padding: 20px;
             border-radius: 25px;
         }
+
+        .theater_card {
+            margin-top: 10px;
+            margin-left: 20px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            /* width: 600px;
+            height: 120px; */
+            display: block;
+            padding: 20px;
+            border: solid red 2px;
+            border-radius: 25px;
+        }
+        hr{
+            margin-bottom:20px;
+            margin-top: 10pxpx;
+        }
+
+        .theater_card:hover{
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .theater_name {
+            margin-top: 15px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            margin-left: 15px;
+            border: solid red 2px;
+            display: inline-block;
+            border-radius: 25px;
+            padding: 4px;
+        }
     </style>
     <body>
         <div class="container">
@@ -84,20 +114,35 @@
                     $r1=mysqli_query($conn,$q1);
                     $n=mysqli_num_rows($r1);
 
-                    echo "TOTAL MOVIES ARE: ".$n;
+                    echo "TOTAL MOVIES ARE: ".$n."<br><br>";
 
                     if($r1)
                     {
                         while($info=mysqli_fetch_array($r1))
                         {
-                            echo "<br><br>";
-                            echo "<br>Movie ID: ".$info['M_id'];
-                            echo "<br>Movie Title: ".$info['M_title'];
-                            echo "<br>Movie Genre: ".$info['M_genre'];
-                            echo "<br>Movie Producer: ".$info['M_producer'];
-                            echo "<br>Movie Director: ".$info['M_director'];
-                            echo "<br>Movie Description: ".$info['M_desp'];
-                            echo "<br>Movie Cast: ".$info['M_cast'];
+                            
+                            $mid = $info['M_id'];
+                            $mtitle = $info['M_title'];
+                            $genre = $info['M_genre'];
+                            $producer = $info['M_producer'];
+                            $director = $info['M_director'];
+                            $desc = $info['M_desp'];
+                            $cast = $info['M_cast'];
+                            // <div class="theater_name"><span>'.$mtitle.'</span><span>'.$mid.'</span></div>
+
+                            echo '
+                            <div class="theater_card">
+                            <h3 style="display: inline;">'.$mtitle.'</h3><span style=" display: inline--block; position: inerit; right: 0;">'.$mid.'</span>
+                            <hr>
+                            <div class="show_times">
+                                <label style="text-decoration: underline;"><b>Descrption:</b></label><span>&emsp;'. $desc .'</span><br><br>
+                                <label style="text-decoration: underline;"><b>Genre:</b></label><span>&emsp;'. $genre.'</span><br><br>
+                                <label style="text-decoration: underline;"><b>Director:</b></label><span>&emsp;'. $director.'</span><br><br>
+                                <label style="text-decoration: underline;"><b>Producer:</b></label><span>&emsp;'. $producer.'</span><br><br>
+                                <label style="text-decoration: underline;"><b>Cast:</b></label><span>&emsp;'. $cast.'</span><br><br>
+                            </div>
+                        </div>
+                            ';
                         }
                     }
                     mysqli_close($conn);
