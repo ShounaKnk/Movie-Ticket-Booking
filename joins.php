@@ -1,15 +1,15 @@
 <?php
     $conn = mysqli_connect("localhost","root","","movie_ticket_booking");
     $mov_id = $_POST['mov_id'];
-    $mov_name = $_POST['mov_name'];
 
-    $query = "SELECT movies.M_id, movies.M_title, COUNT(tickets.b_id) AS Total_Ticket_Booked
-                FROM movies
-                WHERE movies.M_id = mov_id
-                LEFT JOIN tickets ON movies.M_id = tickets.M_id
-                GROUP BY movies.M_id";
 
-    $result = mysqli_query($conn, $query);
+    $q1 = "select movies.M_id, movies.M_title, count(tickets.b_id) as Total_Ticket_Booked
+                from movies
+                where movies.M_id = mov_id
+                left outer join tickets on movies.M_id = tickets.M_id
+                group by movies.M_id";
+
+    $result = mysqli_query($conn, $q1);
 
     if ($result) 
     {
