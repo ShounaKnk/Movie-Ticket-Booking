@@ -64,6 +64,27 @@
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
         }
     </style>
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phno').value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            var phoneRegex = /^\d{10}$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -90,11 +111,11 @@
         <form action="signup.php" method="post">
             <input type="text" class="textfields" name="username" placeholder="Enter Username">
             <br><br>
-            <input type="email" class="textfields" name="email" placeholder="Enter Email ID">
+            <input type="email" class="textfields" id ="email" name="email" placeholder="Enter Email ID">
             <br><br>
             <input type="text" class="textfields" name="pword" placeholder="Enter Password">
             <br><br>
-            <input type="text" class="textfields" name="phno" placeholder="Enter Phone number">
+            <input type="text" class="textfields" name="phno" id="phno" placeholder="Enter Phone number">
             <br><br>
             <label>Gender</label><br>
             <input type="radio" id="m" name="gender" value="male">Male&nbsp;
@@ -105,7 +126,7 @@
             <input type="date" name="dob">
             <br><br>
             <input type="checkbox" checked id="prsnlz">I agree to share my data for personalized expirience<br>
-            <input type="checkbox">I agree to <a href="tc.txt" id="tc">terms and conditions</a><br>
+            <input type="checkbox">I agree to <a href="tc.html" id="tc">terms and conditions</a><br>
             <button type="submit" id="sbutton">Submit</button>
         </form>     
     </div>
