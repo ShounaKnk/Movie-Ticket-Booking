@@ -1,6 +1,7 @@
 <?php
     $con = mysqli_connect("localhost", "root", "", "movie_ticket_booking");
-    $q = "select * from user_details where status = 'active'";
+    $uname = $_COOKIE['username'];
+    $q = "select * from user_details where username = '".$uname."'";
     $r = mysqli_query($con, $q);
     $info = mysqli_fetch_array($r);
     $username = $info['username'];
