@@ -6,21 +6,14 @@
     $phno = $_POST['phno'];
     $dob = $_POST['dob'];
 
-    $q2 = "update user_details set email='$email' where username = ".$username."";
+    $q2 = "update user_details set email='$email', pword='$pword', phno='$phno', gender='$gender', dob='$dob' where username = ".$username."";
     $r2 = mysqli_query($conn,$q2);
-
-    $q3 = "update user_details set pword='$pword' where username = ".$username."";
-    $r3 = mysqli_query($conn,$q3);
-
-    $q4 = "update user_details set phno='$phno' where username = ".$username."";
-    $r4 = mysqli_query($conn,$q4);
-
-    $q5 = "update user_details set gender='$gender' where username = ".$username."";
-    $r5 = mysqli_query($conn,$q5);
-
-    $q6 = "update user_details set dob='$dob' where username = ".$username."";
-    $r6 = mysqli_query($conn,$q6);
-    header("Location: profilepage.php");
+    if($r2)
+    {
+        echo "<script>alert ('User details updated successfully')</script>";
+        header("Location: profilepage.php");
+    }
+    
 
     mysqli_close($conn);
 ?>

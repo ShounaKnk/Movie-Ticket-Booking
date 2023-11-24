@@ -5,7 +5,14 @@
         $b_id=$_POST["b_id"];
         $q1="delete from tickets where b_id='$b_id'";
         $r1=mysqli_query($conn,$q1);
-        header("Location: ticket_display.php");
+        if($r1)
+        {
+            echo "<script>alert ('Ticket Deleted Successfully')</script>";
+            header("Location: ticket_display.php");
+        }
+        else{
+            echo "<script>alert ('Ticket Deletion Failed')</script>";
+        }
         mysqli_close($conn);
     }
 ?>
