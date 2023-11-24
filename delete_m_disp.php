@@ -40,7 +40,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .ins_php
+        .del_php
         {
             background-color: rgb(54, 54, 54);
             margin: 35px 90px ;
@@ -75,28 +75,50 @@
             <a href="display_m.php">Display all movies</a>
         </div>
         <br><br>
-        <div class="ins_php">
-           <div class="ins_php_content">
-            <form method="post" action="insert_m.php" autocomplete="off">
-                <label>Movie ID:</label>
-                <input type="textbox" name="m_id" required><br><br>
-                <label>Movie Name:</label>
-                <input type="textbox" name="m_title" required><br><br>
-                <label>Movie Genre:</label>
-                <input type="textbox" name="m_genre" required><br><br>
-                <label>Movie Producer:</label>
-                <input type="textbox" name="m_prod" required><br><br>
-                <label>Movie Director:</label>
-                <input type="textbox" name="m_director" required><br><br>
-                <label>Movie Description:</label>
-                <input type="textbox" name="m_desp" required><br><br>
-                <label>Movie Cast:</label>
-                <input type="textbox" name="m_cast" required><br><br>
+        <div class="del_php">
+            <form method="post" action="delete_m.php" autocomplete="off">
+                    <label>Enter the Movie ID to delete:</label>
+                    <input type="textbox" name="m_id" required><br><br>
 
-                <input type="submit" class="sub">
-        </form>
-           </div>
+                    <input type="submit" class="sub">
+            </form>
         </div>
+        <div class="del_php">
+            <?php
+                    $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
+                    if($conn)
+                    {
+                        $q1="select * from movies";
+                        $r1=mysqli_query($conn,$q1);
+                        $n=mysqli_num_rows($r1);
+    
+                        echo "TOTAL MOVIES ARE: ".$n;
+    
+                        if($r1)
+                        {
+                            while($info=mysqli_fetch_array($r1))
+                            {
+                                echo "<br><br>";
+                                echo "<br><b>Movie ID</b>: ".$info['M_id'];
+                                echo "<br><br><b>Movie Title</b>: ".$info['M_title'];
+                                echo "<br><b>Movie Genre</b>: ".$info['M_genre'];
+                                echo "<br><b>Movie Producer</b>: ".$info['M_producer'];
+                                echo "<br><b>Movie Director</b>: ".$info['M_director'];
+                                echo "<br><b>Movie Description</b>: ".$info['M_desp'];
+                                echo "<br><b>Movie Cast</b>: ".$info['M_cast'];
+                                $Mid = $info['M_id'];
+                                $Mname = $info['M_title'];
+                                $genre = $info['M_genre'];
+                                $producer = $info['M_producer'];
+                                $director = $info['M_director'];
+                                $about = $info['M_desp'];
+                                $cast = $info['M_cast'];
+                            }
+                        }
+                        mysqli_close($conn);
+                    }
+                ?>
+            </div>
     </body>
     <footer>
         <p>&copy; 2023 MovieMyShow LLC</p>

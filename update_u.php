@@ -6,7 +6,7 @@
     $phno = $_POST['phno'];
     $dob = $_POST['dob'];
 
-    $q2 = "update user_details set email='$email', pword='$pword', phno='$phno', gender='$gender', dob='$dob' where username = ".$username."";
+    $q2 = "update user_details set emailID='$email', password='$pword', phno='$phno', gender='$gender', dateofbirth='$dob' where username = '$username'";
     $r2 = mysqli_query($conn,$q2);
     if($r2)
     {

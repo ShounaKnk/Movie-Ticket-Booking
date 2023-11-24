@@ -63,6 +63,13 @@
         #sbutton:hover{
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
         }
+        .the_disp
+        {
+            background-color: rgb(54, 54, 54);
+            margin: 35px 200px ;
+            padding: 20px;
+            border-radius: 25px;
+        }
     </style>
 </head>
 
@@ -92,6 +99,34 @@
             <br><br>
             <button type="submit" id="sbutton">Delete Details</button>
         </form>     
+    </div>
+    <div class="the_disp">
+        <?php
+            $conn=mysqli_connect("localhost","root","","movie_ticket_booking");
+            if($conn)
+            {
+                $q1="select * from theatre";
+                $r1=mysqli_query($conn,$q1);
+                $n=mysqli_num_rows($r1);
+
+                echo "TOTAL THEATRES ARE: ".$n;
+
+                if($r1)
+                {
+                    while($info=mysqli_fetch_array($r1))
+                    {
+                        echo "<br><br>";
+                        echo "<br>Theatre ID: ".$info['T_id'];
+                        echo "<br>Theatre Name: ".$info['T_name'];
+                        echo "<br>Theatre Location: ".$info['T_location'];
+                        echo "<br>Theatre Capacity: ".$info['T_capacity'];
+                        echo "<br>Theatre Screens: ".$info['T_screens'];
+                        echo "<br>Theatre Owner: ".$info['T_owner'];
+                    }
+                }
+                mysqli_close($conn);
+            }
+        ?>
     </div>
     <div class="footer">
         <div class="footer_text">

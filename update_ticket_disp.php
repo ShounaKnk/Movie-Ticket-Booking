@@ -167,9 +167,6 @@
             <button type="submit" id="sbutton">Submit</button>
         </form>     
     </div>
-    <div class="container" style="width: 400px; height: 500px;">
-
-    </div>
     <div class="footer">
         <div class="footer_text">
             <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>

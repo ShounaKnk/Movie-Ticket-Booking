@@ -163,9 +163,9 @@
             ?>
         </div>
         <div class="select_button">
-            <a href="insert_t.html" id="bbutton"><span id="button_text">Add</span></a>
-            <a href="update_t.html" id="bbutton"><span id="button_text">Update</span></a>
-            <a href="delete_t.html" id="bbutton"><span id="button_text">Delete</span></a>
+            <a href="insert_t_disp.php" id="bbutton"><span id="button_text">Add</span></a>
+            <a href="update_t_disp.php" id="bbutton"><span id="button_text">Update</span></a>
+            <a href="delete_t_disp.php" id="bbutton"><span id="button_text">Delete</span></a>
         </div>
     </div>
     <div class="footer">
