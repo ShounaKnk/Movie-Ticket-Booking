@@ -13,6 +13,8 @@ html, body{
     display: block;
 }
 
+.Pageheader:fo
+
 .header_text{
     position: absolute;
     margin-top: 0px;
@@ -52,11 +54,12 @@ i:hover{
 .footer{
     height: 100px;
     background-color: red;
+    display: block;
 }
 
 .footer_text{
     position: absolute;
     text-align: center;
     margin-top: 10px;
-    margin-left: 620px;
+    margin-left: 920px;
 }

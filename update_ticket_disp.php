@@ -1,4 +1,15 @@
-
+<?php
+    $con = mysqli_connect("localhost","root","","movie_ticket_booking");
+    $u_id = $_COOKIE['uid'];
+    if($con)
+    {
+        $q1="select * from tickets where u_id = $u_id";
+        $r=mysqli_query($con,$q1);
+        $n=mysqli_num_rows($r);
+    }
+    else
+        echo "error in fetching the data";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +45,7 @@
             font-size: 15px;
             border-bottom: solid red 2px;
             padding: 10px 0 2px 5px;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
             display: block;
             width: 400px;
             color: white;
@@ -46,7 +57,7 @@
             font-size: 15px;
             border-bottom: solid red 2px;
             padding: 10px 0 2px 5px;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
             display: block;
             width: 400px;
             color: white;
@@ -57,7 +68,7 @@
         }
 
         .textfields:hover{
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
         }
 
         .seats{
@@ -78,12 +89,45 @@
             border: none;
             margin-top: 20px;
             width: 400px;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
             height: 40px;
             border-radius: 25px;
         }
         #sbutton:hover{
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
+        }
+
+        .ticket_cont{
+            background-color: #363636;
+            position: absolute;
+            padding: 20px;
+            border-radius: 25px;
+            margin: 40px;
+            width: 700px;
+            display: inline-block;
+        }
+
+        .ticket_card{
+            margin: 10px;
+            width: 300px;
+            height: 170px;
+            display: inline-block;
+            background-color: azure;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ticket_card:hover {
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 1);
+        }
+
+        .about{
+            display: inline-block;
+        }
+        
+        .Mname{
+            margin: 10px 0 0 10px;
+            text-transform: uppercase;
+            display: inline; 
         }
     </style>
 </head>
@@ -109,8 +153,8 @@
     <div class="container">
         <h2 class="container_head">Update Ticket</h2>
         <hr>
-        <form action="update_ticket.php" method="post">
-            <input type="text" class="textfields" name="bid" placeholder="Booking ID to Update  Eg: 101" required><br><br>
+        <form action="update_ticket.php" method="post" require>
+            <input type="text" class="textfields" name="bid" placeholder="Booking ID to Update" required><br><br>
             <select name="Theater">
                 <option >Select theater</option>
                 <option name="theater" value="INOX_Panjim">INOX, Panjim</option>
@@ -164,8 +208,44 @@
                 <input type="checkbox" name="seats[]" class="seats" value="e5"><label for="e5">5</label>
                 <input type="checkbox" name="seats[]" class="seats" value="e6"><label for="e6">6</label>
             </div>
-            <button type="submit" id="sbutton">Submit</button>
+            <button style="color:white;" type="submit" id="sbutton">Submit</button>
         </form>     
+    </div>
+    <div class="ticket_cont">
+    <?php
+            if($r)
+            {
+                echo '<h2 style="margin-left: 20px; margin-bottom: 3px;">Total Tickets Are: '.$n.'</h1><hr>';
+                while($info=mysqli_fetch_array($r))
+                {
+                    if(isset($info))
+                    {
+                            $bookingID = $info['b_id'];
+                            $mID = $info['m_id'];
+                            $movie_name = $info['m_name'];
+                            $TheaterN = $info['theater'];
+                            $showtime = $info['showtime'];
+                            $seats = $info['seats'];
+
+                        echo '
+                        <div class="ticket_card" style="color: black; border-radius: 25px; padding: 10px;" >
+                        <h2 class="Mname" style="display: inline;">'.$movie_name.'</h2>&emsp;<span class="Tname" >'.$TheaterN.'</span>
+                        <hr style="border: dashed red 2px; padding: 0; margin: 2px;">
+                        <div class="about">
+                            <p style="text-decoration: underline;"><label><b>booking id: </b></label>'.$bookingID.'</p>
+                            <p><label><b>showtime: </b></label>'.$showtime.'</p>
+                            <p><label><b>seats: </b></label>'.$seats.'</p>
+                        </div>
+                    </div>
+                        ';
+                    }
+                }
+            }
+            else
+                echo "error in fetching the data";
+            mysqli_close($con);
+            
+        ?>
     </div>
     <div class="footer">
         <div class="footer_text">

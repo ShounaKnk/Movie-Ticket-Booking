@@ -8,7 +8,7 @@
         if($r1)
         {
             echo "<script>alert ('Ticket Deleted Successfully')</script>";
-            header("Location: ticket_display.php");
+            header("Location: delete_ticket_disp.php");
         }
         else{
             echo "<script>alert ('Ticket Deletion Failed')</script>";

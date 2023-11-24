@@ -1,8 +1,9 @@
 <?php
     $con = mysqli_connect("localhost","root","","movie_ticket_booking");
+    $u_id = $_COOKIE['uid'];
     if($con)
     {
-        $q1="select * from tickets";
+        $q1="select * from tickets where u_id = $u_id";
         $r=mysqli_query($con,$q1);
         $n=mysqli_num_rows($r);
     }
@@ -134,8 +135,8 @@
         ?>
         <div class="select_button">
             <a href="HomePage.html" id="bbutton"><span id="button_text">Add</span></a>
-            <a href="update_ticket.html" id="bbutton"><span id="button_text">Update</span></a>
-            <a href="delete_ticket.html" id="bbutton"><span id="button_text">Delete</span></a>
+            <a href="update_ticket_disp.php" id="bbutton"><span id="button_text">Update</span></a>
+            <a href="delete_ticket_disp.php" id="bbutton"><span id="button_text">Delete</span></a>
         </div>
         </div>
         

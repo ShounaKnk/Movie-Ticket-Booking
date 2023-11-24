@@ -17,10 +17,15 @@
         $r1=mysqli_query($conn,$q1);
         if($r1)
         {
-            echo "<script>alert ('Ticket Details Updated successfully')</script>";
-            header("Location: ticket_display.php");
+            echo '<script>alert ("Ticket Details Updated successfully")</script>';
+        }
+        else
+        {
+            echo 'error in updating';
+            exit();
         }
         
+        // header("Location: update_ticket_disp.php");
         mysqli_close($conn);
     }
 ?>

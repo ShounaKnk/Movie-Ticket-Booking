@@ -12,7 +12,12 @@
 
         $q1="insert into theatre values ('$T_id','$T_name','$T_location','$T_capacity','$T_screens','$T_owner')";
         $r1=mysqli_query($conn,$q1);
-        header("Location: theatres.php");
+        if($r1)
+        {
+            echo "<script>alert ('New Theater entered Successfully')</script>";
+            header("Location: theatres.php");
+        }
+        
         mysqli_close($conn);
     }
 ?>
