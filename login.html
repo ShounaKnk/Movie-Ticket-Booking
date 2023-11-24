@@ -66,6 +66,14 @@
             box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
         }
     </style>
+    <script>
+        function setusername()
+        {
+            var uname = document.getElementById('uname').value;
+            alert(uname);
+            document.cookie = "username = "+uname;
+        }
+    </script>
 </head>
 <body>
     <div class="Pageheader">
@@ -84,11 +92,11 @@
         <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
         <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
     </div>
-    <div class="container">
+    <div class="container" onsubmit="setusername()">
         <h2 class="container_head">Login</h2>
         <hr>
         <form action="login.php" method="post">
-            <input type="text" class="textfields" name="username" placeholder="Enter Username">
+            <input type="text" class="textfields" id ="uname"  name="username" placeholder="Enter Username">
             <br><br>
             <input type="password" class="textfields" name="pwrd" placeholder="Enter Password">
             <br><span style="font-size: 15px" id="tca">Don't have an account? </span>

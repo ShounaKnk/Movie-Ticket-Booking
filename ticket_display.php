@@ -132,11 +132,11 @@
             mysqli_close($con);
             
         ?>
-        <div class="select_button">
+        <!-- <div class="select_button">
             <a href="HomePage.html" id="bbutton"><span id="button_text">Add</span></a>
             <a href="update_ticket.html" id="bbutton"><span id="button_text">Update</span></a>
             <a href="delete_ticket.html" id="bbutton"><span id="button_text">Delete</span></a>
-        </div>
+        </div> -->
         </div>
         
     </div>
