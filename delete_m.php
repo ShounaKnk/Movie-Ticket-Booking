@@ -5,7 +5,11 @@
         $M_id=$_POST["m_id"];
         $q1="delete from movies where m_id='$M_id'";
         $r1=mysqli_query($conn,$q1);
-        header("Location: Movies.php");
+        if($r1)
+        {
+            echo "<script>alert ('Movie Deleted successfully')</script>";
+            header("Location: Movies.php");
+        }
         mysqli_close($conn);
     }
 ?>

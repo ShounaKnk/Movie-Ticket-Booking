@@ -11,10 +11,8 @@
             $r = mysqli_query($conn, $query);
             if($r) 
             {
-                echo "Deletion Successful !";
+                echo "<script>alert ('Account Deleted Successfully   Create a new account or Log in with an existing one');</script>";
                 header("Location: createaccount.html");
-
-
             } 
             else 
             {

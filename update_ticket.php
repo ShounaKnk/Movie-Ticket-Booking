@@ -15,7 +15,12 @@
 
         $q1="update tickets set theater='$theater', showtime='$showtime', seats='$sel_seats' where b_id='$b_id'";
         $r1=mysqli_query($conn,$q1);
-        header("Location: ticket_display.php");
+        if($r1)
+        {
+            echo "<script>alert ('Ticket Details Updated successfully')</script>";
+            header("Location: ticket_display.php");
+        }
+        
         mysqli_close($conn);
     }
 ?>
