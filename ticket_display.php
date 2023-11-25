@@ -10,8 +10,6 @@
     else
         echo "error in fetching the data";
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +29,6 @@
             padding: 20px;
             width: 700px;
             color: white;
-            /* text-align: center; */
         }
 
         .ticket_card{
@@ -87,6 +84,11 @@
 
 </head>
 <body>
+    <div class="Pageheader">
+        <div class="header_text">
+            <h1>MovieMyShow</h1>
+        </div>
+    </div>
     <div class="page_head">
         <h1>Tickets</h1>
     </div>
@@ -102,7 +104,7 @@
     <?php
             if($r)
             {
-                echo "TOTAL MOVIES ARE: ".$n;
+                echo "TOTAL TICKETS ARE: ".$n;
                 while($info=mysqli_fetch_array($r))
                 {
                     if(isset($info))
@@ -139,7 +141,12 @@
             <a href="delete_ticket_disp.php" id="bbutton"><span id="button_text">Delete</span></a>
         </div>
         </div>
-        
     </div>
+    
+    <div class="footer">
+            <div class="footer_text">
+                <p>&copy; MoiveMyShow LLC. <br> All Rights Reserved </p>
+            </div>
+        </div>
 </body>
 </html>

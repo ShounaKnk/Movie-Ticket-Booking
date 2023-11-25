@@ -3,6 +3,7 @@
     {
         if(isset($_COOKIE['Mid']))
         {
+            $uid = $_COOKIE['uid'];
             $movie_id = $_COOKIE['Mid'];
             $movie_name = $_COOKIE['Mn'];
             $TheaterN = $_COOKIE['Theater'];
@@ -10,7 +11,7 @@
             $seats = $_COOKIE['seats'];
     
             $con = mysqli_connect("localhost","root","","movie_ticket_booking");
-            $q = "insert into tickets (m_id, m_name, theater, showtime, seats) values ('$movie_id', '$movie_name' , '$TheaterN', '$showTime', '$seats')";
+            $q = "insert into tickets (m_id,u_id, m_name, theater, showtime, seats) values ('$movie_id', '$uid', '$movie_name' , '$TheaterN', '$showTime', '$seats')";
             $r = mysqli_query($con, $q);
             if($r)
             {

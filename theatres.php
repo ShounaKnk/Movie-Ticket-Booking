@@ -16,7 +16,7 @@
             margin-bottom: 30px;
             display: inline-block;
             padding-right: 20px;
-            margin-left: 380px;
+            margin-left: 410px;
         }
 
         .menu_head {
@@ -26,31 +26,42 @@
             background-color: red;
             border-radius: 25px;
             display: inline-block;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
         }
 
-        .theater_card {
-            margin-top: 10px;
+        .container_head{
+            margin: 20px 20px 10px;
+        }
+        hr{
             margin-left: 20px;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            border-color: red;
+        }
+
+
+        .theater_card {
+            margin-left: 20px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
             width: 600px;
-            height: 120px;
+            padding: 10px;
             display: block;
             border-radius: 25px;
         }
 
         .theater_card:hover{
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.7);
         }
 
         .theater_name {
-            margin-top: 15px;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
-            margin-left: 15px;
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
+            margin: 0 10px 10px 10px; 
             border: solid red 2px;
-            display: inline-block;
+            padding: 8px 13px;
             border-radius: 25px;
-            padding: 4px;
+        }
+
+        .details{
+            border-radius:25px;
+            margin: 12px;
         }
 
         .show_times {
@@ -65,7 +76,7 @@
             text-decoration: none;
             display: inline-block;
             font-size: 10px;
-            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 7px 12px 0 rgba(0, 0, 0, 0.5);
             border-radius: 25px;
         }
         button:focus{
@@ -90,21 +101,18 @@
             border-radius: 25px;
         }
 
+        .select_button{
+            margin-left: 60px;
+        }
         #bbutton:hover{
-            box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
+            box-shadow: 0px 20px 15px rgba(0,0,0,0.7);
         }
         #button_text{
             position: relative;
             top: 15px;
             left: 55px;
         }
-        .the_disp
-        {
-            background-color: rgb(54, 54, 54);
-            margin: 35px 200px ;
-            padding: 20px;
-            border-radius: 25px;
-        }
+        
     </style>
     <script>
         function sednData(theatre, Stime)
@@ -143,19 +151,35 @@
                     $r1=mysqli_query($conn,$q1);
                     $n=mysqli_num_rows($r1);
 
-                    echo "TOTAL THEATRES ARE: ".$n;
-
+                    echo '
+                    <h3 class="container_head">TOTAL THEATRES ARE:&emsp;'.$n.'</h3>
+                    <hr>
+                    ';
                     if($r1)
                     {
                         while($info=mysqli_fetch_array($r1))
                         {
                             echo "<br><br>";
-                            echo "<br>Theatre ID: ".$info['T_id'];
-                            echo "<br>Theatre Name: ".$info['T_name'];
-                            echo "<br>Theatre Location: ".$info['T_location'];
-                            echo "<br>Theatre Capacity: ".$info['T_capacity'];
-                            echo "<br>Theatre Screens: ".$info['T_screens'];
-                            echo "<br>Theatre Owner: ".$info['T_owner'];
+                            $t_id = $info['T_id'];
+                            $t_name = $info['T_name'];
+                            $t_location = $info['T_location'];
+                            $t_capacity = $info['T_capacity'];
+                            $t_screens = $info['T_screens'];
+                            $t_owner = $info['T_owner'];
+
+                            echo '
+                            <div class="theater_card">
+                                <div class="theater_name"><span style= "display: inline; font-size: 22px;">'.$t_name.'</span>
+                                &emsp;<span>'.$t_location.'</span>
+                                </div>
+                                <div class="details">
+                                    <span><b>THEATER ID:&emsp;</b> '.$t_id.'</span><br>
+                                    <span><b>OWNER:&emsp;</b> '.$t_owner.'</span><br>
+                                    <span><b>SCREENS:&emsp;</b> '.$t_screens.'</span><br>
+                                    <span><b>CAPACITY:&emsp;</b> '.$t_capacity.'</span><br>
+                                </div>
+                            </div>
+                            ';
                         }
                     }
                     mysqli_close($conn);

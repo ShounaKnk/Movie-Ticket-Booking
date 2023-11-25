@@ -10,13 +10,19 @@
         .container{
             background-color: #363636;
             border-radius: 25px;
-            margin-left: 560px;
+            margin-left: 520px;
             margin-top: 30px;
             margin-bottom: 30px;
             padding: 20px;
             display: inline-block;
             width: 400px;
         }
+
+        .outer_container
+        {
+            height: 380px;
+        }
+
         .container_head{
             display: inline-block;
             margin-top: 10px; 
@@ -93,8 +99,9 @@
         <a href="Movies.php"><i class="fa fa-fw fa-user"></i>Movies</a>
         <a href="theatres.php"><i class="fa fa-fw fa-user"></i>Theaters</a>
     </div>
-    <div class="container" onsubmit="setusername()">
-        <h2 class="container_head">Login</h2>
+    <div class="outer_container" onsubmit="setusername()">
+        <div class="container">
+            <h2 class="container_head">Login</h2>
         <hr>
         <form action="login.php" method="post">
             <input type="text" class="textfields" id ="uname"  name="username" placeholder="Enter Username">
@@ -104,6 +111,7 @@
             <a href="createaccount.html" style="font-size: 15px" id="ca">Create an account</a><br>
             <button type="submit" id="sbutton">Submit</button>
         </form>
+        </div>
     </div>
     <div class="footer">
         <div class="footer_text">

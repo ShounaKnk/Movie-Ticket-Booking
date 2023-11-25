@@ -13,7 +13,6 @@ html, body{
     display: block;
 }
 
-.Pageheader:fo
 
 .header_text{
     position: absolute;
@@ -61,5 +60,5 @@ i:hover{
     position: absolute;
     text-align: center;
     margin-top: 10px;
-    margin-left: 920px;
+    margin-left: 660px;
 }
